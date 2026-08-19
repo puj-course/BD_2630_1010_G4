@@ -57,12 +57,12 @@ La siguiente sección es **solo un ejemplo**.
 
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-|Subir Modelo ER | Juan Sebastián Quintero | features/modelo_er_inicial | Se subió la imagen en png del modelo E-R inicial |
+|Subir Modelo ER | Juan Sebastián Quintero | features/modelo_er_inicial | Realizó el modelo E-R inicial corregido basado en el del enunciado |
 | | | | |
 | | | | |
 
 ### Cambios principales
-- Se subió la imagen del modelo_er_inicial en png
+- Se subió la imagen del modelo_er_inicial en png corregido ó actualizado basado directamente del enunciado, añadiendo atributos de grupo a las selecciones y atributos de asistencia_registrada a partidos, esto con el objetivo de poder realizar ciertas consultas que necesitan de estos atributos para ser realizadas.
 
 ### Problemas encontrados
 
