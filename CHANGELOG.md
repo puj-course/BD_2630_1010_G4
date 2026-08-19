@@ -15,36 +15,6 @@ los responsables y las ramas utilizadas en este documento.
 | Estudiante 5 | github.com/usuario5 |
 
 ---
-
-⚠️ **IMPORTANTE:**  
-La siguiente sección es **solo un ejemplo**.  
-**DEBEN BORRARLA cuando empiecen a registrar su propio progreso.**
-
----
-
-## Ejemplo - Semana 1 (BORRAR ESTA SECCIÓN)
-
-### Objetivos de la semana
-- Subir documentos de la Entrega 1
-- Ajustar observaciones
-- Definir consultas a implementar
-
-### Tareas realizadas
-
-| Tarea | Responsable(s) | Rama | Archivo(s) |
-|------|----------------|------|-----------|
-| Subir modelo ER | Ana | docs-modelo | docs/modelo_er.png |
-| Ajustar modelo lógico | Carlos | modelo-logico | docs/modelo_logico.md |
-| Definir lista de consultas | Laura | consultas-plan | docs/consultas_plan.md |
-
-### Cambios principales
-- Se corrigió la relación entre `Mesa` y `Puesto`
-- Se definieron 8 consultas de análisis electoral
-
-### Problemas encontrados
-- Dudas sobre agregación por municipio
-
----
 # Registro real del proyecto
 
 ## Semana 1 (16–22 marzo)
