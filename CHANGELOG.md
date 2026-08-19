@@ -57,12 +57,12 @@ La siguiente sección es **solo un ejemplo**.
 
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| | | | |
+|Subir Modelo ER | Juan Sebastián Quintero | features/modelo_er_inicial | Se subió la imagen en png del modelo E-R inicial |
 | | | | |
 | | | | |
 
 ### Cambios principales
-
+- Se subió la imagen del modelo_er_inicial en png
 
 ### Problemas encontrados
 
