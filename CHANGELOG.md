@@ -8,11 +8,10 @@ los responsables y las ramas utilizadas en este documento.
 ## Equipo del Proyecto
 | Nombre        | GitHub / Perfil |
 |--------------|-----------------|
-| Estudiante 1 | github.com/usuario1 |
-| Estudiante 2 | github.com/usuario2 |
-| Estudiante 3 | github.com/usuario3 |
-| Estudiante 4 | github.com/usuario4 |
-| Estudiante 5 | github.com/usuario5 |
+| Juan Sebastián Quintero | github.com/jsquintero-co |
+| Pablo León | github.com/pablo-leon9 |
+| Nicolás Moreno | github.com/NicolasMor-16 |
+| Andrés Peña | github.com/Andrés-andrew5588 |
 
 ---
 # Registro real del proyecto
