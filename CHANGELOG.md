@@ -21,7 +21,10 @@ los responsables y las ramas utilizadas en este documento.
 
 ### Objetivos de la semana
 
-(Describan qué querían lograr esta semana)
+-Hacer el modelo E-R
+-Hacer el documento técnico
+-Montar las tablas
+-Hacer las consultas planteadas para la semana 1
 
 ### Tareas realizadas
 
