@@ -58,6 +58,10 @@ El sistema no puede reflejar identidades ni datos reales de jugadores,
 árbitros o espectadores, lo cual es una limitante de alcance del
 proyecto, no del modelo.
 
+**Cruce de horarios en un mismo estadio**
+
+El sistema permite programar dos partidos en el mismo estadio y a la misma hora por error, ya que no revisa si la cancha está ocupada. Por ahora se asume que los horarios se ingresan bien, y más adelante se agregará una regla para evitar estos cruces.
+
 # Supuestos del modelado
 
 # Modelo entidad relacion
