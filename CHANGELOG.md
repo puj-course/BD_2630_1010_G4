@@ -31,7 +31,7 @@ los responsables y las ramas utilizadas en este documento.
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
 |Subir Modelo ER | Juan Sebastián Quintero | features/modelo_er_inicial | Realizó el modelo E-R inicial corregido basado en el del enunciado |
-| | | | |
+|Documento tecnico |Diego Nicolas Moreno Alvarez | features/documento-tecnico |Realizo los planteamientos de limites del sistema en base a lo pedido en las condiciones, con nuevas según el reglamento real |
 | | | | |
 
 ### Cambios principales
