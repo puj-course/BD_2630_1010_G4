@@ -8,16 +8,16 @@ los responsables y las ramas utilizadas en este documento.
 ## Equipo del Proyecto
 | Nombre        | GitHub / Perfil |
 |--------------|-----------------|
-| Estudiante 1 | github.com/usuario1 |
-| Estudiante 2 | github.com/usuario2 |
-| Estudiante 3 | github.com/usuario3 |
+| Juan Sebastián Quintero | github.com/usuario1 |
+| Diego Nicolas Moreno Alvarez | github.com/NicolasMor-16 |
+| Pablo Samuel Leon Hernandez | github.com/pablo-leon9 |
 | Estudiante 4 | github.com/usuario4 |
 | Estudiante 5 | github.com/usuario5 |
 
 ---
 # Registro real del proyecto
 
-## Semana 1 (16–22 marzo)
+## Semana 1 (16–22 marzo) // fechas en agosto
 
 ### Objetivos de la semana
 
@@ -36,7 +36,7 @@ los responsables y las ramas utilizadas en este documento.
 
 ### Cambios principales
 - Se subió la imagen del modelo_er_inicial en png corregido ó actualizado basado directamente del enunciado, añadiendo atributos de grupo a las selecciones y atributos de asistencia_registrada a partidos, esto con el objetivo de poder realizar ciertas consultas que necesitan de estos atributos para ser realizadas.
-
+-Se desarollo el documento-tecnico con las especificaciones, ademas se consulto a la monitora sobre posibles limitaciones para el sistema
 ### Problemas encontrados
 
 
@@ -45,6 +45,10 @@ los responsables y las ramas utilizadas en este documento.
 ## Semana 2 (23–29 marzo)
 
 ### Objetivos de la semana
+-Hacer consultas planteadas para la semana 2.
+-Crear rama y vistas solicitadas.
+-Hacer consulta 15 planteada del enunciado.
+-Version inicial con: INSERT de dos particiones y UPDATE del marcador final.
 
 (Describan qué querían lograr esta semana)
 
@@ -52,9 +56,9 @@ los responsables y las ramas utilizadas en este documento.
 
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| | | | |
-| | | | |
-| | | | |
+| Generar vistas practicas|Diego Nicolas Moreno Alvarez | sql/entrega1/vistas/vistas.sql| |
+| Implemetar consulta 15| Juan Sebastián Quintero| sql/consultas/semana3_consulta_vista.sql | |
+| Version inicial insert y update | Pablo Leon Hernandez | sql/entrega1/dml/dml_ciclo_vida_partido.sql| |
 
 ### Cambios principales
 
