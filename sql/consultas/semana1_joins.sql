@@ -21,27 +21,24 @@ ORDER BY ocupacion_pct DESC;
 
 
 -- Consulta 6: Identificar partidos con marcadores atípicos y partidos sin goles (0-0).
-SELECT 
+SELECT
     p.id_partido,
-    p.fecha_hora,
+    p.id_edicion,
     p.fase,
-    e.nombre AS estadio,
     SUM(pp.goles_marcados) AS goles_totales,
     CASE
-        WHEN SUM(pp.goles_marcados) = 0 THEN 'Partido sin goles (0-0)'
-        WHEN SUM(pp.goles_marcados) >= 7 THEN 'Marcador inusualmente alto'
-    END AS patron_atipico
+        WHEN SUM(pp.goles_marcados) = 0 THEN 'SIN GOLES'
+        WHEN SUM(pp.goles_marcados) >= 7 THEN 'MARCADOR ALTO'
+    END AS patron
 FROM PARTIDO p
-JOIN ESTADIO e
-    ON p.id_estadio = e.id_estadio
 JOIN PARTICIPACION_PARTIDO pp
     ON p.id_partido = pp.id_partido
-GROUP BY 
+GROUP BY
     p.id_partido,
-    p.fecha_hora,
-    p.fase,
-    e.nombre
-HAVING 
+    p.id_edicion,
+    p.fase
+HAVING
     SUM(pp.goles_marcados) = 0
     OR SUM(pp.goles_marcados) >= 7
-ORDER BY goles_totales DESC;
+ORDER BY
+    goles_totales DESC;
