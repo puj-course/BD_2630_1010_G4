@@ -1,17 +1,23 @@
 -- Consulta 2: Calcular el porcentaje de ocupación estimado de cada estadio.
-SELECT 
+SELECT
     e.nombre AS estadio,
+    e.ciudad,
     e.capacidad,
-    SUM(p.asistencia_registrada) AS asistencia_total,
-    ROUND((SUM(p.asistencia_registrada) / e.capacidad) * 100, 2) AS porcentaje_ocupacion
+    COUNT(p.id_partido) AS partidos_jugados,
+    ROUND(
+        (SUM(p.asistencia_registrada) /
+        (COUNT(p.id_partido) * e.capacidad)) * 100,
+        2
+    ) AS ocupacion_pct
 FROM ESTADIO e
 JOIN PARTIDO p
     ON e.id_estadio = p.id_estadio
-GROUP BY 
+GROUP BY
     e.id_estadio,
     e.nombre,
+    e.ciudad,
     e.capacidad
-ORDER BY porcentaje_ocupacion DESC;
+ORDER BY ocupacion_pct DESC;
 
 
 -- Consulta 6: Identificar partidos con marcadores atípicos y partidos sin goles (0-0).
