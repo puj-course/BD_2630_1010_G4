@@ -53,8 +53,8 @@ Dudas sobre las limitantes del sistema fueron resueltas en clase con la monitora
 -Implementar las vistas SQL requeridas para el proyecto.
 -Documentar la utilidad y posibles usos de cada vista.
 Probar y verificar el funcionamiento de las vistas, consultas y tablas.
+-Realizar las consultas de agregación que fueron dadas para la semana 2 de la lista de enunciados.
 
-(Describan qué querían lograr esta semana)
 
 ### Tareas realizadas
 
