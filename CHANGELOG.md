@@ -39,6 +39,7 @@ los responsables y las ramas utilizadas en este documento.
 - Se creó el documento técnico del proyecto donde se muestra la situación problema y las motivaciones del proyecto, junto con el modelo E-R corregido basado en el del enunciado del proyecto.
 - Se crearon las tablas de cada entidad junto con sus atributos, PK y FK y los constraints.
 - Se desarrollaron las consultas 2 y 6 de la lista de consultas del enunciado.
+- Se hicieron las consultas de agregación para la semana 2.
 ### Problemas encontrados
 No se han probado aún las consultas por qué aún no se han hecho los INSERTS.
 Dudas sobre las limitantes del sistema fueron resueltas en clase con la monitora.
