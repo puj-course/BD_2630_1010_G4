@@ -61,7 +61,7 @@ Probar y verificar el funcionamiento de las vistas, consultas y tablas.
 
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| Consultas de agregación de la semana 2. | Juan Sebastián Quintero | faeatures/semana2_agregación.sql | Se hicieron las consultas 1,3,4,5,9,12 y 13 del listado de consultas, estas eran consultas de agregación |
+| Consultas de agregación de la semana 2. | Juan Sebastián Quintero | features/semana2_agregación.sql | Se hicieron las consultas 1,3,4,5,9,12 y 13 del listado de consultas, estas eran consultas de agregación |
 | Generar entre 4 y 5 vistas además de su documentación| Diego Nicolas Moreno Alvarez| sql/entrega1/vistas/vistas.sql | Cada vista debe ir documentada con un comentario indicando su propósito ademas de ser útil, practica y reutilizable a futuro.|
 | Desarollar la consulta 15 | | sql/entrega1/consultas/semana3_consulta_vista.sql | |
 | ersión inicial: INSERT y UPDATE  | Pablo Samuel Leon Hernandez | sql/entrega1/dml |Versión inicial: INSERT de un nuevo partido, INSERT de sus dos participaciones, UPDATE del marcador final |
