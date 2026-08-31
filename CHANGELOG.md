@@ -30,9 +30,9 @@ los responsables y las ramas utilizadas en este documento.
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
 |Subir Modelo ER | Juan Sebastián Quintero | features/modelo_er_inicial | Realizó el modelo E-R inicial corregido basado en el del enunciado |
-| Acrualizar y Subir documento técnico | Andrés Peña, Nicolás Moreno, Pablo León | features/documento-tecnico | Se creó el documento técnico basado en los índices y alcances de la primera entrega del proyecto |
+| Acrualizar y Subir documento técnico | Andrés Peña, Diego Nicolas Moreno, Pablo León | features/documento-tecnico | Se creó el documento técnico basado en los índices y alcances de la primera entrega del proyecto |
 | Montar las tablas | Juan Sebastián Quintero | features/creacion_tablas | Se subieron las tablas de todas las entidades planteadas en el modelo E-R corregido basado en el modelo original del enunciado |
-| Hacer las consultas 2 y 6 | Juan Sebastián Quintero | features/semana1_joins | Se hicieron las consultas 2 y 6 del listado de consultas del enunciado de consultas |
+| Hacer las consultas 2 y 6 | Juan Sebastián Quintero, Nicolas Moreno | features/semana1_joins | Se hicieron las consultas 2 y 6 del listado de consultas del enunciado de consultas |
 
 ### Cambios principales
 - Se subió la imagen del modelo_er_inicial en png corregido ó actualizado basado directamente del enunciado, añadiendo atributos de grupo a las selecciones y atributos de asistencia_registrada a partidos, esto con el objetivo de poder realizar ciertas consultas que necesitan de estos atributos para ser realizadas.
@@ -47,6 +47,11 @@ No se han probado aún las consultas por qué aún no se han hecho los INSERTS.
 ## Semana 2 (23–29 marzo)
 
 ### Objetivos de la semana
+-Implementar y compilar las 5 vistas SQL principales para simplificar la consulta de datos.
+-Desarrollar las consultas asignadas y el ciclo de vida básico del partido (INSERT/UPDATE).
+-Implementar las vistas SQL requeridas para el proyecto.
+-Documentar la utilidad y posibles usos de cada vista.
+Probar y verificar el funcionamiento de las vistas, consultas y tablas.
 
 (Describan qué querían lograr esta semana)
 
@@ -54,15 +59,20 @@ No se han probado aún las consultas por qué aún no se han hecho los INSERTS.
 
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| | | | |
-| | | | |
-| | | | |
+| Consultas 7, 8, 10 y 11 del listado de consultas del enunciado. |  | sql/entrega1/consultas/semana3_subconsultas.sql | |
+| Generar entre 4 y 5 vistas además de su documentación| Diego Nicolas Moreno Alvarez| sql/entrega1/vistas/vistas.sql | Cada vista debe ir documentada con un comentario indicando su propósito ademas de ser útil, practica y reutilizable a futuro.|
+| Desarollar la consulta 15 | | sql/entrega1/consultas/semana3_consulta_vista.sql | |
+| ersión inicial: INSERT y UPDATE  | Pablo Samuel Leon Hernandez | sql/entrega1/dml/dml_ciclo_vida_partido.sql |Versión inicial: INSERT de un nuevo partido, INSERT de sus dos participaciones, UPDATE del marcador final |
 
 ### Cambios principales
 
+Vistas implementadas: Se crearon las vistas modulares para dividir partidos en local/visitante, la vista consolidada de marcadores completos, y las vistas estadísticas de goles por selección y aforo de estadios.
 
+Validación con datos: Se insertaron registros de prueba con sus respectivos COMMIT para verificar que las vistas retornaran datos reales sin errores de identificadores.
+
+Documentación: Se creó el archivo docs/entrega1/vistas.md justificando la modularidad y el valor práctico de las vistas para futuras entregas.
 ### Problemas encontrados
-
+-Para probar que funcionaran las vistas se hizo una prueba simple con solo dos partidos y 4 selecciones para comprobar funcionamiento, a carencia de datos aun no se puede saber si toda la arquitectura funciona correctamente
 
 ---
 
