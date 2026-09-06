@@ -1,10 +1,10 @@
---DROPs para eliminar las tablas
+-- DROPs para eliminar las tablas
+
 -- DROP TABLE PARTICIPACION_PARTIDO CASCADE CONSTRAINTS;
 -- DROP TABLE PARTIDO CASCADE CONSTRAINTS;
 -- DROP TABLE ESTADIO CASCADE CONSTRAINTS;
 -- DROP TABLE SELECCION CASCADE CONSTRAINTS;
 -- DROP TABLE EDICION_MUNDIAL CASCADE CONSTRAINTS;
-
 
 -- TABLA: EDICION_MUNDIAL
 
@@ -26,6 +26,8 @@ CREATE TABLE ESTADIO (
     ciudad          VARCHAR2(100)   NOT NULL,
     capacidad       NUMBER(10)      NOT NULL,
 
+    --FK: Cada estadio pertenece a una edición mundial.
+
     CONSTRAINT fk_estadio_edicion
         FOREIGN KEY (id_edicion)
         REFERENCES EDICION_MUNDIAL(id_edicion),
@@ -43,10 +45,15 @@ CREATE TABLE SELECCION (
     confederacion   VARCHAR2(100)   NOT NULL,
     grupo           CHAR(1),
 
+    -- FK: Cada selección está registrada en una edición mundial.
+    -- ON DELETE NO ACTION: No se permite eliminar una edición
+    -- que tenga selecciones asociadas.
+    -- ON UPDATE: Oracle no soporta ON UPDATE CASCADE en FK.
     CONSTRAINT fk_seleccion_edicion
         FOREIGN KEY (id_edicion)
         REFERENCES EDICION_MUNDIAL(id_edicion)
 );
+
 
 -- TABLA: PARTIDO
 
@@ -58,10 +65,12 @@ CREATE TABLE PARTIDO (
     fase                    VARCHAR2(30)    NOT NULL,
     asistencia_registrada   NUMBER(10)      NOT NULL,
 
+    -- FK: Cada partido pertenece a una edición mundial.
     CONSTRAINT fk_partido_edicion
         FOREIGN KEY (id_edicion)
         REFERENCES EDICION_MUNDIAL(id_edicion),
 
+    -- FK: Cada partido se juega en un estadio registrado.
     CONSTRAINT fk_partido_estadio
         FOREIGN KEY (id_estadio)
         REFERENCES ESTADIO(id_estadio),
@@ -79,14 +88,19 @@ CREATE TABLE PARTICIPACION_PARTIDO (
     condicion           VARCHAR2(20)    NOT NULL,
     goles_marcados      NUMBER(3)       NOT NULL,
 
+    -- FK: Cada participación pertenece a un partido existente.
+
     CONSTRAINT fk_participacion_partido
         FOREIGN KEY (id_partido)
-        REFERENCES PARTIDO(id_partido),
+        REFERENCES PARTIDO(id_partido)
+        ON DELETE CASCADE,
 
+    -- FK: Cada participación corresponde a una selección existente.
     CONSTRAINT fk_participacion_seleccion
         FOREIGN KEY (id_seleccion)
         REFERENCES SELECCION(id_seleccion),
 
+    -- Evita registrar dos veces la misma selección en un partido.
     CONSTRAINT uq_partido_seleccion
         UNIQUE (id_partido, id_seleccion),
 
@@ -96,3 +110,4 @@ CREATE TABLE PARTICIPACION_PARTIDO (
     CONSTRAINT ck_participacion_goles
         CHECK (goles_marcados >= 0)
 );
+
