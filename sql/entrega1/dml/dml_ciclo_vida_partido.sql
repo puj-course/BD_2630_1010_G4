@@ -112,3 +112,23 @@ INSERT INTO PARTICIPACION_PARTIDO (
   'LOCAL',
   -2
 );
+
+
+-- =================================================================================
+-- pruebas ON DELETE
+
+
+-- 1: eliminar edicion con estadios asociados (RESTRICT)
+-- violacion de FK_ESTADIO_EDICION
+-- comportamiento esperado: Error ORA-02292
+
+DELETE FROM EDICION_MUNDIAL 
+WHERE id_edicion = 1;
+
+
+-- 2: eliminar estadio con partidos asociados (RESTRICT)
+-- violacion de FK_PARTIDO_ESTADIO
+-- comportamiento esperado: Error ORA-02292
+
+DELETE FROM ESTADIO 
+WHERE id_estadio = 1;
