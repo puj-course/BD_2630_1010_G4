@@ -78,19 +78,22 @@ Documentación: Se creó el archivo docs/entrega1/vistas.md justificando la modu
 
 ---
 
-## Semana 3 (6–12 abril)
-
+## Semana 3 (30 marzo–5 abril)
 ### Objetivos de la semana
-
-(Describan qué querían lograr esta semana)
+- Definir el DDL final del modelo (tablas, PK, FK con ON DELETE/ON UPDATE justificados, CHECK, UNIQUE e índices).
+- Actualizar el ciclo de vida del partido (DML) incluyendo operaciones inválidas y comportamiento de borrado (ON DELETE).
+- Desarrollar la consulta 14 del listado de consultas (verificación de integridad).
+- Crear roles y privilegios (usuario de solo consulta y usuario operativo) con pruebas de acceso.
+- Actualizar el CHANGELOG.md del proyecto.
 
 ### Tareas realizadas
-
-| Tarea | Responsable(s) | Rama utilizada | Descripción |
+| Tarea | Responsable(s) | Rama/Ruta utilizada | Descripción |
 |------|------|------|------|
-| | | | |
-| | | | |
-| | | | |
+| DDL del modelo inicial | Juan Sebastián Quintero | sql/entrega1/ddl/ddl_modelo_inicial.sql | Definición de tablas con PK, FK (con ON DELETE/ON UPDATE justificados por comentario), restricciones CHECK y UNIQUE según el enunciado (sección 8.1.2), e índices estratégicos comentados. |
+| Consulta 14 (verificación de integridad) | Juan Sebastián Quintero | sql/entrega1/consultas/semana4_verificacion_integridad.sql | Desarrollo de la consulta 14 del listado de consultas del enunciado. |
+| Ciclo de vida del partido (DML) y pruebas | Pablo Samuel León Hernández, Andrés Peña | sql/entrega1/dml/dml_ciclo_vida_partido.sql, tests/entrega1/pruebas_dml.md | Actualización del archivo de la Semana 2 con al menos 3 intentos de operación inválida documentados y demostración del comportamiento ON DELETE en al menos 2 relaciones distintas; documentación de cada caso y resultado en pruebas_dml.md. |
+| Roles y privilegios | Diego Nicolás Moreno Álvarez | sql/entrega1/roles/roles_privilegios.sql, tests/entrega1/pruebas_privilegios.md | Creación de al menos 2 usuarios/roles (uno de solo consulta y otro operativo) con sentencias GRANT/REVOKE correspondientes, y evidencia en pruebas_privilegios.md de que cada usuario solo puede realizar lo que le corresponde. |
+| Actualización de CHANGELOG.md | Diego Nicolás Moreno Álvarez | — | Pendiente: aún sin avance. |
 
 ### Cambios principales
 
