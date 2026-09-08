@@ -33,7 +33,7 @@ CREATE TABLE ESTADIO (
         REFERENCES EDICION_MUNDIAL(id_edicion),
 
     CONSTRAINT ck_estadio_capacidad
-        CHECK (capacidad > 40000)
+        CHECK (capacidad >= 40000) --Mínimo que permite la fifa por estadio
 );
 
 -- TABLA: SELECCION
