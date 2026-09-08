@@ -84,7 +84,6 @@ Documentación: Se creó el archivo docs/entrega1/vistas.md justificando la modu
 - Actualizar el ciclo de vida del partido (DML) incluyendo operaciones inválidas y comportamiento de borrado (ON DELETE).
 - Desarrollar la consulta 14 del listado de consultas (verificación de integridad).
 - Crear roles y privilegios (usuario de solo consulta y usuario operativo) con pruebas de acceso.
-- Actualizar el CHANGELOG.md del proyecto.
 
 ### Tareas realizadas
 | Tarea | Responsable(s) | Rama/Ruta utilizada | Descripción |
