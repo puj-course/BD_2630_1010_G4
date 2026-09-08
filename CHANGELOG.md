@@ -75,12 +75,12 @@ Validación con datos: Se insertaron registros de prueba con sus respectivos COM
 Documentación: Se creó el archivo docs/entrega1/vistas.md justificando la modularidad y el valor práctico de las vistas para futuras entregas.
 ### Problemas encontrados
 -Para probar que funcionaran las vistas se hizo una prueba simple con solo dos partidos y 4 selecciones para comprobar funcionamiento, a carencia de datos aun no se puede saber si toda la arquitectura funciona correctamente
-
+-No se pudieron realizar las consultas 12 y 13 del listado de consultas.
 ---
 
 ## Semana 3 (30 marzo–5 abril)
 ### Objetivos de la semana
-- Definir el DDL final del modelo (tablas, PK, FK con ON DELETE/ON UPDATE justificados, CHECK, UNIQUE e índices).
+- Definir el DDL final del modelo (tablas, PK, FK con ON DELETE/ON UPDATE, CHECK, UNIQUE).
 - Actualizar el ciclo de vida del partido (DML) incluyendo operaciones inválidas y comportamiento de borrado (ON DELETE).
 - Desarrollar la consulta 14 del listado de consultas (verificación de integridad).
 - Crear roles y privilegios (usuario de solo consulta y usuario operativo) con pruebas de acceso.
