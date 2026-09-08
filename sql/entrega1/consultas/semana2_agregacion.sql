@@ -1,97 +1,82 @@
--- Consulta 1: Mostrar las 5 selecciones con más goles marcados en la edición modelada.
+--Consulta 1
+SELECT * 
+FROM (
+    SELECT s.pais, SUM(pa.goles_marcados) as GOLES_TOTALES
+    FROM seleccion s
+    JOIN participacion_partido pa
+    ON s.id_seleccion = pa.id_seleccion
+    GROUP BY s.pais, s.id_seleccion --Evita que dos selecciones con mismo nombre mezclaran suma de goles totales
+    --Entonces es mejor filtrar por id tambien y no solo por nombre
+    ORDER BY SUM(pa.goles_marcados) DESC)
+WHERE ROWNUM <= 5;
 
-SELECT
-    s.pais,
-    SUM(pp.goles_marcados) AS goles_totales
-FROM SELECCION s
-JOIN PARTICIPACION_PARTIDO pp
-    ON s.id_seleccion = pp.id_seleccion
-JOIN PARTIDO p
-    ON pp.id_partido = p.id_partido
+--Consulta 3
+SELECT s.pais, SUM(pa.goles_marcados) AS GOLES_FAVOR,
+SUM(ap.goles_marcados) AS GOLES_CONTRA, 
+SUM(pa.goles_marcados) - SUM(ap.goles_marcados) 
+    AS DIFERENCIA_GOL
+FROM seleccion s
+JOIN participacion_partido pa
+    ON s.id_seleccion = pa.id_seleccion
+JOIN participacion_partido ap 
+    ON pa.id_partido = ap.id_partido
+AND pa.id_seleccion <> ap.id_seleccion --Que no sean las mismas, para que se haga la comparación 
 GROUP BY
     s.id_seleccion,
     s.pais
 ORDER BY
-    goles_totales DESC;
-	
-	
--- Consulta 3: Mostrar las selecciones con su diferencia de gol a lo largo de sus partidos.
+    DIFERENCIA_GOL DESC;
 
-SELECT
-    s.pais,
-    SUM(pp.goles_marcados) AS goles_favor,
-    SUM(op.goles_marcados) AS goles_contra,
-    SUM(pp.goles_marcados) - SUM(op.goles_marcados) AS diferencia_gol
-FROM SELECCION s
-JOIN PARTICIPACION_PARTIDO pp
-    ON s.id_seleccion = pp.id_seleccion
-JOIN PARTICIPACION_PARTIDO op
-    ON pp.id_partido = op.id_partido
-    AND pp.id_seleccion <> op.id_seleccion
-GROUP BY
-    s.id_seleccion,
-    s.pais
-ORDER BY
-    diferencia_gol DESC;
-	
--- Consulta 4: Contar la cantidad de partidos jugados en cada fase del torneo.
+--Consulta 4
+SELECT p.fase, COUNT(p.id_partido) as NUM_PARTIDOS
+FROM partido p
+GROUP BY p.fase; 
 
-SELECT
-    fase,
-    COUNT(id_partido) AS num_partidos
-FROM PARTIDO
-GROUP BY
-    fase
-ORDER BY
-    num_partidos DESC;
-	
--- Consulta 5: Indicar, para cada edición, el o los estadios que albergaron la mayor cantidad de partidos.
-
-SELECT
+--Consulta 5
+SELECT p.id_edicion, e.nombre AS ESTADIO, COUNT(p.id_partido)as N_PARTIDOS
+FROM estadio e
+JOIN partido p
+ON e.id_estadio = p.id_estadio
+GROUP BY 
     p.id_edicion,
-    e.nombre AS estadio,
-    COUNT(p.id_partido) AS n_partidos
-FROM PARTIDO p
-JOIN ESTADIO e
-    ON p.id_estadio = e.id_estadio
-GROUP BY
-    p.id_edicion,
-    e.id_estadio,
+    p.id_estadio,
     e.nombre
 HAVING COUNT(p.id_partido) = (
-    SELECT MAX(COUNT(p2.id_partido))
-    FROM PARTIDO p2
-    WHERE p2.id_edicion = p.id_edicion
-    GROUP BY p2.id_estadio
-)
-ORDER BY
-    p.id_edicion,
-    n_partidos DESC;
-	
--- Consulta 9: Mostrar, para cada estadio, el partido con el mayor marcador combinado jugado en él.
+    SELECT MAX(COUNT(p2.id_partido)) --La mayor cantidad de partidos
+    FROM partido p2
+    WHERE p2.id_edicion = p.id_edicion --Donde sea la misma edicion 
+    GROUP BY p2.id_estadio) --Por cada estadio
+ORDER BY p.id_edicion,
+         N_PARTIDOS DESC;
 
-SELECT
-    e.nombre AS estadio,
-    p.id_partido,
-    p.fase,
-    SUM(pp.goles_marcados) AS goles_totales
-FROM ESTADIO e
-JOIN PARTIDO p
+
+--Consulta 9
+SELECT 
+    e.nombre AS ESTADIO, 
+    p.id_partido, 
+    p.fase, 
+    SUM(pa.goles_marcados) AS GOLES_TOTALES
+FROM estadio e
+JOIN partido p 
     ON e.id_estadio = p.id_estadio
-JOIN PARTICIPACION_PARTIDO pp
-    ON p.id_partido = pp.id_partido
-GROUP BY
-    e.id_estadio,
-    e.nombre,
-    p.id_partido,
+JOIN participacion_partido pa 
+    ON p.id_partido = pa.id_partido
+GROUP BY 
+    e.id_estadio, 
+    e.nombre, 
+    p.id_partido, 
     p.fase
-HAVING SUM(pp.goles_marcados) = (
-    SELECT MAX(SUM(pp2.goles_marcados))
-    FROM PARTIDO p2
-    JOIN PARTICIPACION_PARTIDO pp2
-        ON p2.id_partido = pp2.id_partido
-    WHERE p2.id_estadio = p.id_estadio
-    GROUP BY p2.id_partido
-)
-ORDER BY
-    e.nombre;
+HAVING (e.id_estadio, SUM(pa.goles_marcados)) IN (
+    --Encuentra el marcador más alto (MAX) para cada estadio
+    SELECT id_estadio, MAX(goles_por_partido)
+    FROM (
+        --Sumar los goles de cada partido y saber en qué estadio se jugó
+        SELECT p2.id_estadio, p2.id_partido, SUM(pa2.goles_marcados) AS goles_por_partido
+        FROM partido p2
+        JOIN participacion_partido pa2 
+            ON p2.id_partido = pa2.id_partido
+        GROUP BY p2.id_estadio, p2.id_partido
+    )
+    GROUP BY id_estadio --Agrupar por estadio para extraer solo el número más alto
+);
+
