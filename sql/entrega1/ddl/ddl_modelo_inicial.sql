@@ -46,9 +46,6 @@ CREATE TABLE SELECCION (
     grupo           CHAR(1),
 
     -- FK: Cada selección está registrada en una edición mundial.
-    -- ON DELETE NO ACTION: No se permite eliminar una edición
-    -- que tenga selecciones asociadas.
-    -- ON UPDATE: Oracle no soporta ON UPDATE CASCADE en FK.
     CONSTRAINT fk_seleccion_edicion
         FOREIGN KEY (id_edicion)
         REFERENCES EDICION_MUNDIAL(id_edicion)
