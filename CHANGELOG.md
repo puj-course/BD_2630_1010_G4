@@ -118,11 +118,12 @@ Aunque ya se hizo la entrega 1 se siguen aqui lso añadidos particulares despues
 
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| Álgebra relacional | Juan Sebastian Quintero| |Traducción de al menos 4 de las 15 consultas a notación de álgebra relacional (σ, π, ▷◁, ρ). |
+| Álgebra relacional | Juan Sebastian Quintero | | Traducción de al menos 4 de las 15 consultas a notación de álgebra relacional (σ, π, ▷◁, ρ). |
 | Evaluación crítica del modelo inicial | Diego Nicolas Moreno Alvarez | docs/entrega1/evaluacion_critica_modelo_inicial.md | Identificación de problemas del modelo inicial, propuesta de ajustes y elaboración del boceto conceptual del modelo ampliado. |
 | Documento técnico y diccionario de datos | Pablo Samuel Leon Hernandez | docs/entrega1/documento_tecnico.md | Completar la transformación al modelo lógico relacional, justificando PK, FK y cardinalidades, además del diccionario de datos y revisión de las secciones del documento. |
-| Merge de ramas a main | | Integración de las ramas pendientes para cerrar la Entrega 1. |
-|Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main/CHANGELOG.md | Registro de los cambios finales realizados durante la Entrega 1. |
+| Merge de ramas a main | | | Integración de las ramas pendientes para cerrar la Entrega 1. |
+| Agregar diccionario de datos | Andrés Peña | feature/documento-tecnico | Se agregó el diccionario de datos completo del proyecto, incluyendo tablas, campos, restricciones, relaciones principales, vista creada y datos registrados. |
+| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main/CHANGELOG.md | Registro de los cambios finales realizados durante la Entrega 1. |
 ### Cambios principales
 Se incorporó la representación en álgebra relacional de consultas del proyecto.
 Se documentaron problemas y mejoras propuestas para el modelo inicial.
