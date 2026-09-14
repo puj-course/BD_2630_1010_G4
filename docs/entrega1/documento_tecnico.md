@@ -169,8 +169,3 @@ A partir del modelo entidad relacion inicial se realizo la transformacion al mod
 |ESTADIO->PARTIDO|1:N|un estadio puede tener muchos partidos a lo largo del torneo, pero cada partido se juega en un solo estadio|
 |PARTIDO<->SELECCION|N:M|un partido enfrenta a dos selecciones, y una seleccion participa en muchos partidos|
 
-# 5. Diccionario de datos
-
-La especificación técnica detallada de cada tabla, incluyendo nombres físicos de columnas, tipos de datos en Oracle, nulabilidad, restricciones de integridad y descripción funcional, se encuentra documentada de forma exhaustiva en el archivo independiente:
-
-**`docs/entrega1/diccionario_datos.md`**
