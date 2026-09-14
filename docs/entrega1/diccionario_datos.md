@@ -199,4 +199,3 @@ La base de datos contiene inicialmente:
 - 4 participaciones de selecciones.
 
 Posteriormente se registra el partido 4 y sus dos participaciones para demostrar el ciclo de vida del partido y la actualización de los goles.
->>>>>>> 8bff91988fd9e6b28ee6176de3ccf1be7097666c
