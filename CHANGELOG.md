@@ -119,7 +119,7 @@ Aunque ya se hizo la entrega 1 se siguen aqui lso añadidos particulares despues
 
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| Álgebra relacional | Juan Sebastian Quintero | features/algebra_relacional | Traducción de al menos 4 de las 15 consultas a notación de álgebra relacional (σ, π, ▷◁, ρ, τ, y). |
+| Álgebra relacional | Juan Sebastian Quintero | features/algebra_relacional | Traducción de al menos 4 de las 15 consultas a notación de álgebra relacional (σ, π, ▷◁, → , τ, y). |
 | Evaluación crítica del modelo inicial | Diego Nicolas Moreno Alvarez | docs/entrega1/evaluacion_critica_modelo_inicial.md | Identificación de problemas del modelo inicial, propuesta de ajustes y elaboración del boceto conceptual del modelo ampliado. |
 | Documento técnico y diccionario de datos | Pablo Samuel Leon Hernandez | docs/entrega1/documento_tecnico.md | Completar la transformación al modelo lógico relacional, justificando PK, FK y cardinalidades, además del diccionario de datos y revisión de las secciones del documento. |
 | Merge de ramas a main | | | Integración de las ramas pendientes para cerrar la Entrega 1. |
@@ -136,3 +136,5 @@ Además actualizó el CHANGELOG.md con los cambios de la Entrega 1.
 Se requirió revisar la coherencia entre la documentación, el modelo lógico y lo implementado, debido a las posibles nuevas normas o al choque de logicas.
 Fue necesario coordinar la integración de las diferentes ramas antes del cierre de la entrega adem+as de corregir diversos errores en el formato o en nombres de rama.
 Se encontraron fallos en lso nombre y carpetas que tuvieron que ser corregidos.
+No se logró hacer las consultas en LaTex para el .md de álgebra relacional.
+Se usó el Símbolo de natural JOIN cómo reemplazo del Inner JOIN por temas de eficiencia por lo que no se pudieron hacer las consultas en LaTex.
