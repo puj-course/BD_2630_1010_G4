@@ -74,8 +74,8 @@ Validación con datos: Se insertaron registros de prueba con sus respectivos COM
 
 Documentación: Se creó el archivo docs/entrega1/vistas.md justificando la modularidad y el valor práctico de las vistas para futuras entregas.
 ### Problemas encontrados
--Para probar que funcionaran las vistas se hizo una prueba simple con solo dos partidos y 4 selecciones para comprobar funcionamiento, a carencia de datos aun no se puede saber si toda la arquitectura funciona correctamente
--No se pudieron realizar las consultas 12 y 13 del listado de consultas.
+Para probar que funcionaran las vistas se hizo una prueba simple con solo dos partidos y 4 selecciones para comprobar funcionamiento, a carencia de datos aun no se puede saber si toda la arquitectura funciona correctamente
+No se pudieron realizar las consultas 12 y 13 del listado de consultas.
 ---
 
 ## Semana 3 (30 marzo–5 abril)
@@ -95,6 +95,7 @@ Documentación: Se creó el archivo docs/entrega1/vistas.md justificando la modu
 | Creación de subconsultas semana 3| Juan Sebastián Quintero | features/semana3_subconsultas| Se crearon las consultas de la semana 3 (subconsultas) |
 
 ### Cambios principales
+Se isntauraron roles ademas de los inicials grant revokes, las subconsultas de la semana correspondiente, documentaciones sobre las actualizacions y pruebas en un clico de vida ademas de comprobaciones de condciones minimas.
 
 
 ### Problemas encontrados
@@ -134,3 +135,4 @@ Además actualizó el CHANGELOG.md con los cambios de la Entrega 1.
 ### Problemas encontrados
 Se requirió revisar la coherencia entre la documentación, el modelo lógico y lo implementado, debido a las posibles nuevas normas o al choque de logicas.
 Fue necesario coordinar la integración de las diferentes ramas antes del cierre de la entrega adem+as de corregir diversos errores en el formato o en nombres de rama.
+Se encontraron fallos en lso nombre y carpetas que tuvieron que ser corregidos.
