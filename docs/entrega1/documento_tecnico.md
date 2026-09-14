@@ -124,3 +124,47 @@ diferencias de gol, partidos, selecciones y estadios.
 id="fig:modelo entidad relacion"
 data-label="fig:modelo entidad relacion"></span></p>
 </figure>
+
+# Transformacion a modelo logico relacional
+
+A partir del modelo entidad relacion inicial se realizo la transformacion al modelo logico relacional. Cada entidad se convirtio en una tabla, y cada relacion se represento mediante claves foraneas, a continuacion se presenta el esquema relacional resultante y la justificacion de cada decision de diseño:
+
+## Esquema relacional
+|tabla|atributos|PK|FK|
+|---|---|---|---|
+|EDICION_MUNDIAL|id_edicion, anio, pais_sede, lema, fecha_inicio, fecha_fin|id_edicion|-|
+|ESTADIO|id_estadio, id_edicion, nombre, ciudad, capacidad|id_estadio|id_edicion->EDICION_MUNDIAL(id_edicion)|
+|SELECCION|id_seleccion, id_edicion, pais, confederacion, grupo|id_seleccion|id_edicion->EDICION_MUNDIAL(id_edicion)|
+|PARTIDO|id_partido, id_edicion, id_estadio, fecha_hora, fase, asistencia_registrada|id_partido|id_edicion->EDICION_MUNDIAL(id_edicion), id_estadio->ESTADIO(id_estadio)|
+|PARTICIPACION_PARTIDO|id_participacion, id_partido, id_seleccion, condicion, goles_marcados|id_participacion|id_partido->PARTIDO(id_partido), id_seleccion->SELECCION(id_seleccion)|
+
+## Justificacion de llaves primarias (PK)
+
+|tabla|PK|justificacion|
+|---|---|---|
+|EDICION_MUNDIAL|id_edicion|identifica de forma unica cada edicion del torneo, no depende de otros datos como el año o el pais sede|
+|ESTADIO|id_estadio|identifica de forma unica cada estadio, Se usa un ID en lugar del nombre porque dos estadios pueden compartir el nombre en ciudades diferentes|
+|SELECCION|id_seleccion|identifica de forma unica cada seleccion participante, no se usa el país porque una misma seleccion puede participar en varias ediciones|
+|PARTIDO|id_partido|identifica de forma unica cada partido del torneo, la combinacion de fecha, estadio y selecciones no es suficiente y puede ser mas confuso|
+|PARTICIPACION_PARTIDO|id_participacion|identifica de forma unica cada participacion. aunque existe id_partido y id_seleccion, se opto por una PK extra para agilizar referencias futuras y operaciones de actualizacion|
+
+## Justificación de llaves foráneas (FK)
+
+|FK|tabla origen|tabla destino|justificacion|
+|---|---|---|---|
+|estadio_edicion|ESTADIO|EDICION_MUNDIAL|un estadio debe tener una edicion asociada|
+|seleccion_edicion|SELECCION|EDICION_MUNDIAL|una seleccion debe tener una edicion asociada|
+|partido_edicion|PARTIDO|EDICION_MUNDIAL|un partido debe tener una edicion asociada|
+|partido_estadio|PARTIDO|ESTADIO|un partido debe jugarse en un estadio existente|
+|participacion_partido|PARTICIPACION_PARTIDO|PARTIDO|una participacion debe estar asociada a un partido existente|
+|participacion_seleccion|PARTICIPACION_PARTIDO|SELECCION|una participacion debe estar asociada a una seleccion existente|
+
+## Justificación de cardinalidades
+
+|relacion|cardinalidad|justificacion|
+|---|---|---|
+|EDICION_MUNDIAL->ESTADIO|1:N|una edicion del mundial puede tener muchos estadios, pero cada estadio pertenece a una sola edicion|
+|EDICION_MUNDIAL->SELECCION|1:N|una edicion puede tener muchas selecciones participantes, pero cada seleccion compite en una sola edicion|
+|EDICION_MUNDIAL->PARTIDO|1:N|una edicion puede tener muchos partidos, pero cada partido pertenece a una sola edicion|
+|ESTADIO->PARTIDO|1:N|un estadio puede tener muchos partidos a lo largo del torneo, pero cada partido se juega en un solo estadio|
+|PARTIDO<->SELECCION|N:M|un partido enfrenta a dos selecciones, y una seleccion participa en muchos partidos|
