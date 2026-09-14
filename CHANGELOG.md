@@ -106,17 +106,30 @@ Documentación: Se creó el archivo docs/entrega1/vistas.md justificando la modu
 
 ### Objetivos de la semana
 
-(Describan qué querían lograr esta semana)
+Objetivos de la semana
+Traducir al álgebra relacional al menos 4 de las 15 consultas implementadas.
+Realizar la evaluación crítica del modelo inicial y proponer ajustes para el modelo ampliado.
+Completar el documento técnico, incluyendo el modelo lógico y el diccionario de datos.
+Fusionar las ramas pendientes a main.
+Actualizar el CHANGELOG.md con el cierre de la Entrega 1.
+Aunque ya se hizo la entrega 1 se siguen aqui lso añadidos particulares despues del cambio de cronograma
 
 ### Tareas realizadas
 
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| | | | |
-| | | | |
-| | | | |
-
+| Álgebra relacional | Juan Sebastian Quintero| |Traducción de al menos 4 de las 15 consultas a notación de álgebra relacional (σ, π, ▷◁, ρ). |
+| Evaluación crítica del modelo inicial | Diego Nicolas Moreno Alvarez | docs/entrega1/evaluacion_critica_modelo_inicial.md | Identificación de problemas del modelo inicial, propuesta de ajustes y elaboración del boceto conceptual del modelo ampliado. |
+| Documento técnico y diccionario de datos | Pablo Samuel Leon Hernandez | docs/entrega1/documento_tecnico.md | Completar la transformación al modelo lógico relacional, justificando PK, FK y cardinalidades, además del diccionario de datos y revisión de las secciones del documento. |
+| Merge de ramas a main | | Integración de las ramas pendientes para cerrar la Entrega 1. |
+|Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main/CHANGELOG.md | Registro de los cambios finales realizados durante la Entrega 1. |
 ### Cambios principales
-
+Se incorporó la representación en álgebra relacional de consultas del proyecto.
+Se documentaron problemas y mejoras propuestas para el modelo inicial.
+Se completó la documentación del modelo lógico relacional y el diccionario de datos.
+La integraron las ramas pendientes en main.
+Además actualizó el CHANGELOG.md con los cambios de la Entrega 1.
 
 ### Problemas encontrados
+Se requirió revisar la coherencia entre la documentación, el modelo lógico y lo implementado, debido a las posibles nuevas normas o al choque de logicas.
+Fue necesario coordinar la integración de las diferentes ramas antes del cierre de la entrega adem+as de corregir diversos errores en el formato o en nombres de rama.
