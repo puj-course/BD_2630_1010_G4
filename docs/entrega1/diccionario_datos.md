@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Diccionario de Datos — Entrega 1
 
 Presnetación detalla la estructura física y lógica sobre las cinco tablas implementadas el sistema para  la Copa Mundial de la FIFA.
