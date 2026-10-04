@@ -148,29 +148,19 @@ Ampliar el modelo lógico relacional, cumpliendo el requisito de entre 12 y 16 t
 ### Tareas realizadas
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-|   | Juan Sebastian Quintero |  |   |
-|  | Diego Nicolas Moreno Alvarez |  |  |
-|  |  |  |  |
-|  | Pablo Leon Hernandez| |  |
-|  | Andrés Peña |  |  |
-| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main/CHANGELOG.md | Registro de los cambios finales realizados durante la Entrega 1. |
+| Ampliación del modelo lógico | Juan Sebastian Quintero |  | Extensión del modelo relacional a partir de la evaluación del modelo inicial, incorporando las entidades y relaciones necesarias y manteniendo una estructura normalizada. |
+| Diagrama del modelo lógico | Diego Nicolas Moreno Alvarez |  | Elaboración del diagrama del modelo ampliado e incorporación a la documentación del proyecto. |
+| Diccionario de datos ampliado | Pablo Leon Hernandez |  | Documentación de todas las tablas y sus atributos, incluyendo tipos de datos, descripciones y restricciones. |
+| Organización de carpetas | Andrés Peña |  | Preparación de la estructura de directorios para la documentación, los scripts SQL y las pruebas de la Entrega 2. |
+
+| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main/CHANGELOG.md | Registro de los cambios realizados durante la primera semana de trabajo de la Entrega 2. |
 ### Cambios principales
-
-Ampliación del modelo lógico	Por definir	Por definir	Extensión del modelo relacional a partir de la evaluación del modelo inicial, incorporando las entidades y relaciones necesarias y manteniendo una estructura normalizada.
-Diagrama del modelo lógico	Por definir	Por definir	Elaboración del diagrama del modelo ampliado e incorporación a la documentación del proyecto.
-Diccionario de datos ampliado	Por definir	Por definir	Documentación de todas las tablas y sus atributos, incluyendo tipos de datos, descripciones y restricciones.
-Organización de carpetas	Por definir	Por definir	Preparación de la estructura de directorios para la documentación, los scripts SQL y las pruebas de la Entrega 2.
-Actualización del CHANGELOG	Por definir	Por definir	Registro de los cambios realizados durante la primera semana de trabajo de la Entrega 2.
-Cambios principales
-
 Se amplió el modelo lógico relacional tomando como referencia la evaluación crítica realizada durante la Entrega 1. Se incorporaron las entidades y relaciones necesarias para representar los requerimientos del sistema, procurando mantener la normalización y la coherencia del modelo.
-
 Se elaboró el diagrama lógico y se amplió el diccionario de datos para documentar los atributos, tipos de datos y restricciones de las entidades.
-
-Además, se organizó la estructura de carpetas correspondiente a la Entrega 2 y se actualizaron los registros de cambios del proyecto.
+Además, se organizó la estructura de carpetas correspondiente a la Entrega 2 y se actualizó el CHANGELOG.md con los cambios realizados durante la semana.
 
 ### Problemas encontrados
-Por completar según las dificultades identificadas durante el desarrollo de las tareas.
+
 
 ## Semana 6 (Entrega 2- Semana 2)
 ### Objetivos de la semana
@@ -181,8 +171,8 @@ Implementar en SQL el modelo lógico ampliado mediante la creación de todas las
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
 | | Juan Sebastian Quintero |  |  |
-|  | Diego Nicolas Moreno Alvarez |  |  |
-|  | Pablo Samuel Leon Hernandez |  |  |
+| Carga de datos inciales. | Diego Nicolas Moreno Alvarez | sql/entrega2/dml/carga_datos_prueba.sql | Dataset de prueba coherente para todas las entidades del modelo ampliado. |
+|  Modelo Fisíco | Pablo Samuel Leon Hernandez | docs/entrega2/modelo_fisico.md | Diagrama físico y justificación de los índices creados.  |
 | | Andrés Peña |  |  |
 | Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main/CHANGELOG.md | Registro de los cambios finales realizados durante la Entrega 1. |
 ### Cambios principales
