@@ -140,13 +140,22 @@ No se logró hacer las consultas en LaTex para el .md de álgebra relacional.
 Se usó el Símbolo de natural JOIN cómo reemplazo del Inner JOIN por temas de eficiencia por lo que no se pudieron hacer las consultas en LaTex.
 
 
-Semana 5 (Entrega 2 — Semana 1)
-Objetivos de la semana
+## Semana 6 (Entrega 2- Semana 1)
+### Objetivos de la semana
 
 Ampliar el modelo lógico relacional, cumpliendo el requisito de entre 12 y 16 tablas bien normalizadas. Elaborar el diagrama del modelo lógico ampliado y completar el diccionario de datos para todas las entidades. Organizar la estructura de carpetas correspondiente a la Entrega 2 y actualizar el CHANGELOG.md con los avances realizados.
 
-Tareas realizadas
-Tarea	Responsable(s)	Rama utilizada	Descripción
+### Tareas realizadas
+| Tarea | Responsable(s) | Rama utilizada | Descripción |
+|------|------|------|------|
+|   | Juan Sebastian Quintero |  |   |
+|  | Diego Nicolas Moreno Alvarez |  |  |
+|  |  |  |  |
+|  | Pablo Leon Hernandez| |  |
+|  | Andrés Peña |  |  |
+| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main/CHANGELOG.md | Registro de los cambios finales realizados durante la Entrega 1. |
+### Cambios principales
+
 Ampliación del modelo lógico	Por definir	Por definir	Extensión del modelo relacional a partir de la evaluación del modelo inicial, incorporando las entidades y relaciones necesarias y manteniendo una estructura normalizada.
 Diagrama del modelo lógico	Por definir	Por definir	Elaboración del diagrama del modelo ampliado e incorporación a la documentación del proyecto.
 Diccionario de datos ampliado	Por definir	Por definir	Documentación de todas las tablas y sus atributos, incluyendo tipos de datos, descripciones y restricciones.
@@ -160,23 +169,23 @@ Se elaboró el diagrama lógico y se amplió el diccionario de datos para docume
 
 Además, se organizó la estructura de carpetas correspondiente a la Entrega 2 y se actualizaron los registros de cambios del proyecto.
 
-Problemas encontrados
-
+### Problemas encontrados
 Por completar según las dificultades identificadas durante el desarrollo de las tareas.
 
-Semana 6 (Entrega 2 — Semana 2)
-Objetivos de la semana
+## Semana 6 (Entrega 2- Semana 2)
+### Objetivos de la semana
 
 Implementar en SQL el modelo lógico ampliado mediante la creación de todas las tablas. Definir las claves primarias y foráneas, las restricciones de integridad y los índices necesarios. Documentar el modelo físico y justificar las decisiones relacionadas con los índices. Elaborar un conjunto de datos de prueba coherente con las entidades y relaciones del modelo ampliado y actualizar el CHANGELOG.md.
 
-Tareas realizadas
-Tarea	Responsable(s)	Rama utilizada	Descripción
-Implementación del DDL ampliado	Por definir	Por definir	Creación de las tablas del modelo ampliado mediante SQL, definiendo claves primarias, claves foráneas, restricciones CHECK y UNIQUE, e índices.
-Definición de integridad referencial	Por definir	Por definir	Configuración de las reglas ON DELETE y ON UPDATE, justificando su uso según las relaciones y necesidades de integridad del modelo.
-Documentación del modelo físico	Por definir	Por definir	Elaboración del diagrama físico y documentación de las decisiones de implementación, incluyendo la justificación de los índices creados.
-Carga de datos de prueba	Por definir	Por definir	Elaboración de un script DML con datos coherentes para las entidades del modelo ampliado, respetando las restricciones y relaciones definidas.
-Actualización del CHANGELOG	Por definir	Por definir	Registro de los cambios realizados durante la segunda semana y actualización del estado de la Entrega 2.
-Cambios principales
+### Tareas realizadas
+| Tarea | Responsable(s) | Rama utilizada | Descripción |
+|------|------|------|------|
+| | Juan Sebastian Quintero |  |  |
+|  | Diego Nicolas Moreno Alvarez |  |  |
+|  | Pablo Samuel Leon Hernandez |  |  |
+| | Andrés Peña |  |  |
+| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main/CHANGELOG.md | Registro de los cambios finales realizados durante la Entrega 1. |
+### Cambios principales
 
 Se implementó el modelo ampliado mediante un script DDL que define las tablas, las claves primarias y foráneas, las restricciones de integridad y los índices necesarios para la estructura de la base de datos.
 
