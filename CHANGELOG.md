@@ -138,3 +138,54 @@ Fue necesario coordinar la integración de las diferentes ramas antes del cierre
 Se encontraron fallos en lso nombre y carpetas que tuvieron que ser corregidos.
 No se logró hacer las consultas en LaTex para el .md de álgebra relacional.
 Se usó el Símbolo de natural JOIN cómo reemplazo del Inner JOIN por temas de eficiencia por lo que no se pudieron hacer las consultas en LaTex.
+
+
+Semana 5 (Entrega 2 — Semana 1)
+Objetivos de la semana
+
+Ampliar el modelo lógico relacional, cumpliendo el requisito de entre 12 y 16 tablas bien normalizadas. Elaborar el diagrama del modelo lógico ampliado y completar el diccionario de datos para todas las entidades. Organizar la estructura de carpetas correspondiente a la Entrega 2 y actualizar el CHANGELOG.md con los avances realizados.
+
+Tareas realizadas
+Tarea	Responsable(s)	Rama utilizada	Descripción
+Ampliación del modelo lógico	Por definir	Por definir	Extensión del modelo relacional a partir de la evaluación del modelo inicial, incorporando las entidades y relaciones necesarias y manteniendo una estructura normalizada.
+Diagrama del modelo lógico	Por definir	Por definir	Elaboración del diagrama del modelo ampliado e incorporación a la documentación del proyecto.
+Diccionario de datos ampliado	Por definir	Por definir	Documentación de todas las tablas y sus atributos, incluyendo tipos de datos, descripciones y restricciones.
+Organización de carpetas	Por definir	Por definir	Preparación de la estructura de directorios para la documentación, los scripts SQL y las pruebas de la Entrega 2.
+Actualización del CHANGELOG	Por definir	Por definir	Registro de los cambios realizados durante la primera semana de trabajo de la Entrega 2.
+Cambios principales
+
+Se amplió el modelo lógico relacional tomando como referencia la evaluación crítica realizada durante la Entrega 1. Se incorporaron las entidades y relaciones necesarias para representar los requerimientos del sistema, procurando mantener la normalización y la coherencia del modelo.
+
+Se elaboró el diagrama lógico y se amplió el diccionario de datos para documentar los atributos, tipos de datos y restricciones de las entidades.
+
+Además, se organizó la estructura de carpetas correspondiente a la Entrega 2 y se actualizaron los registros de cambios del proyecto.
+
+Problemas encontrados
+
+Por completar según las dificultades identificadas durante el desarrollo de las tareas.
+
+Semana 6 (Entrega 2 — Semana 2)
+Objetivos de la semana
+
+Implementar en SQL el modelo lógico ampliado mediante la creación de todas las tablas. Definir las claves primarias y foráneas, las restricciones de integridad y los índices necesarios. Documentar el modelo físico y justificar las decisiones relacionadas con los índices. Elaborar un conjunto de datos de prueba coherente con las entidades y relaciones del modelo ampliado y actualizar el CHANGELOG.md.
+
+Tareas realizadas
+Tarea	Responsable(s)	Rama utilizada	Descripción
+Implementación del DDL ampliado	Por definir	Por definir	Creación de las tablas del modelo ampliado mediante SQL, definiendo claves primarias, claves foráneas, restricciones CHECK y UNIQUE, e índices.
+Definición de integridad referencial	Por definir	Por definir	Configuración de las reglas ON DELETE y ON UPDATE, justificando su uso según las relaciones y necesidades de integridad del modelo.
+Documentación del modelo físico	Por definir	Por definir	Elaboración del diagrama físico y documentación de las decisiones de implementación, incluyendo la justificación de los índices creados.
+Carga de datos de prueba	Por definir	Por definir	Elaboración de un script DML con datos coherentes para las entidades del modelo ampliado, respetando las restricciones y relaciones definidas.
+Actualización del CHANGELOG	Por definir	Por definir	Registro de los cambios realizados durante la segunda semana y actualización del estado de la Entrega 2.
+Cambios principales
+
+Se implementó el modelo ampliado mediante un script DDL que define las tablas, las claves primarias y foráneas, las restricciones de integridad y los índices necesarios para la estructura de la base de datos.
+
+Se documentó el modelo físico, incluyendo la representación de las relaciones implementadas y la justificación de los índices según las necesidades de consulta y acceso a los datos.
+
+También se elaboró un script DML con un conjunto de datos de prueba coherente con las entidades y relaciones del modelo, con el propósito de facilitar la validación de la implementación.
+
+Finalmente, se actualizó el CHANGELOG.md para registrar los cambios realizados durante esta fase del proyecto.
+
+Problemas encontrados
+
+Por completar según las dificultades identificadas durante la implementación, la carga de datos y la validación del modelo físico.
