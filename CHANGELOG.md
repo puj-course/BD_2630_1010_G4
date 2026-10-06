@@ -148,7 +148,7 @@ Ampliar el modelo lógico relacional, cumpliendo el requisito de entre 12 y 16 t
 ### Tareas realizadas
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| Ampliación del modelo lógico | Juan Sebastian Quintero |  | Extensión del modelo relacional a partir de la evaluación del modelo inicial, incorporando las entidades y relaciones necesarias y manteniendo una estructura normalizada. |
+| Ampliación del modelo lógico | Juan Sebastian Quintero | features/modelo_logico | Extensión del modelo relacional a partir de la evaluación del modelo inicial, incorporando las entidades y relaciones necesarias, junto con la documentación del diccionario de datos y desarrollo del mismo modelo ampliado. |
 | Diagrama del modelo lógico | Diego Nicolas Moreno Alvarez |  | Elaboración del diagrama del modelo ampliado e incorporación a la documentación del proyecto. |
 | Diccionario de datos ampliado | Pablo Leon Hernandez |  | Documentación de todas las tablas y sus atributos, incluyendo tipos de datos, descripciones y restricciones. |
 | Organización de carpetas | Andrés Peña |  | Preparación de la estructura de directorios para la documentación, los scripts SQL y las pruebas de la Entrega 2. |
