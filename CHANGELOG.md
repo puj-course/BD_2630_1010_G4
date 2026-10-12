@@ -188,3 +188,35 @@ Finalmente, se actualizó el CHANGELOG.md para registrar los cambios realizados 
 Problemas encontrados
 
 Por completar según las dificultades identificadas durante la implementación, la carga de datos y la validación del modelo físico.
+
+
+Aquí tienes la entrada de la nueva semana con la plantilla y el formato exacto de tu CHANGELOG.md:
+
+Markdown
+## Semana 8 (Entrega 2 - Semana 4)
+### Objetivos de la semana
+
+Documentar la justificación formal del proceso de normalización en primera, segunda y tercera forma normal (1FN, 2FN y 3FN) sobre las 16 entidades del modelo relacional ampliado. Implementar la primera parte de consultas avanzadas orientadas al análisis deportivo y operativo del torneo con agregaciones multinivel en SQL, coordinar el trabajo por ramas del equipo y actualizar el CHANGELOG.md.
+
+### Tareas realizadas
+| Tarea | Responsable(s) | Rama utilizada | Descripción |
+|------|------|------|------|
+| Consultas avanzadas (Parte 2) | Juan Sebastian Quintero | feature/consultas-avanzadas-p2 | Construcción del segundo bloque de consultas avanzadas y validación de resultados. |
+| Normalización del modelo | Diego Nicolas Moreno Alvarez, Pablo Samuel Leon Hernandez | feature/normalizacion-consultas-p1 | Justificación técnica de 1FN, 2FN y 3FN para las tablas del modelo en `docs/entrega2/normalizacion.md`. |
+| Consultas avanzadas (Parte 1) | Diego Nicolas Moreno Alvarez, Pablo Samuel Leon Hernandez | feature/normalizacion-consultas-p1 | Implementación de al menos 3 consultas avanzadas con agregaciones por Jugador, Partido, Selección, Grupo/Fase y Edición en `sql/entrega2/consultas/consultas_avanzadas_parte1.sql`. |
+| Pruebas de consultas y soporte | Andrés Peña | feature/consultas-avanzadas-p2 | Ejecución de casos de prueba y optimización sobre el bloque de consultas avanzadas. |
+| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Registro consolidado de avances semanales, ramas utilizadas y dificultades encontradas. |
+
+### Cambios principales
+
+Se elaboró el documento de normalización `docs/entrega2/normalizacion.md`, justificando la atomicidad de atributos (1FN), la dependencia funcional completa sobre claves primarias y candidatas alternas (2FN), y la eliminación de dependencias transitivas en la jerarquía territorial e institucional del modelo (3FN).
+
+Se implementó el script `sql/entrega2/consultas/consultas_avanzadas_parte1.sql` con consultas analíticas avanzadas que cubren diferentes niveles de agregación del torneo: desempeño individual de jugadores, balance operativo de estadios e incidencias por fase, y rendimiento consolidado de selecciones por grupo y edición.
+
+Se mantuvo el flujo de integración colaborativa mediante ramas temáticas para distribuir las consultas avanzadas y la documentación técnica entre los integrantes del grupo.
+
+Finalmente, se actualizó el CHANGELOG.md para dejar constancia de las actividades desarrolladas en la semana.
+
+### Problemas encontrados
+
+Por completar según las dificultades identificadas durante la justificación teórica de dependencias funcional como errores previos revisados y buscar que la implementación sea consistente.
