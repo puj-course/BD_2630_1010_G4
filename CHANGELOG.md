@@ -201,17 +201,15 @@ Documentar la justificación formal del proceso de normalización en primera, se
 ### Tareas realizadas
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| Consultas avanzadas (Parte 2) | Juan Sebastian Quintero | feature/consultas-avanzadas-p2 | Construcción del segundo bloque de consultas avanzadas y validación de resultados. |
-| Normalización del modelo | Diego Nicolas Moreno Alvarez, Pablo Samuel Leon Hernandez | feature/normalizacion-consultas-p1 | Justificación técnica de 1FN, 2FN y 3FN para las tablas del modelo en `docs/entrega2/normalizacion.md`. |
-| Consultas avanzadas (Parte 1) | Diego Nicolas Moreno Alvarez, Pablo Samuel Leon Hernandez | feature/normalizacion-consultas-p1 | Implementación de al menos 3 consultas avanzadas con agregaciones por Jugador, Partido, Selección, Grupo/Fase y Edición en `sql/entrega2/consultas/consultas_avanzadas_parte1.sql`. |
-| Pruebas de consultas y soporte | Andrés Peña | feature/consultas-avanzadas-p2 | Ejecución de casos de prueba y optimización sobre el bloque de consultas avanzadas. |
-| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Registro consolidado de avances semanales, ramas utilizadas y dificultades encontradas. |
+| Consultas avanzadas (Parte 2) | Juan Sebastian Quintero, Andrés Peña | sql/entrega2/consultas/consultas_avanzadas_parte1.sql | Construcción del segundo bloque de consultas avanzadas y validación de resultados. |
+| Jutificación de la Normalización del modelo | Diego Nicolas Moreno Alvarez, Pablo Samuel Leon Hernandez | docs/entrega2/normalizacion.md | Justificación técnica de 1FN, 2FN y 3FN para las tablas del modelo en un nuevo documento para docs en main. |
+| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Registro consolidado de avances de la samena 4 entrega 2, ramas utilizadas y dificultades encontradas. |
 
 ### Cambios principales
 
 Se elaboró el documento de normalización `docs/entrega2/normalizacion.md`, justificando la atomicidad de atributos (1FN), la dependencia funcional completa sobre claves primarias y candidatas alternas (2FN), y la eliminación de dependencias transitivas en la jerarquía territorial e institucional del modelo (3FN).
 
-Se implementó el script `sql/entrega2/consultas/consultas_avanzadas_parte1.sql` con consultas analíticas avanzadas que cubren diferentes niveles de agregación del torneo: desempeño individual de jugadores, balance operativo de estadios e incidencias por fase, y rendimiento consolidado de selecciones por grupo y edición.
+Se implementó el script `sql/entrega2/consultas/consultas_avanzadas_parte1.sql` con consultas analíticas avanzadas que cubren diferentes niveles de agregación del torneo como el  desempeño individual de jugadores, balance  de estadios e incidencias por fase y rendimiento consolidado de selecciones por grupo y edición.
 
 Se mantuvo el flujo de integración colaborativa mediante ramas temáticas para distribuir las consultas avanzadas y la documentación técnica entre los integrantes del grupo.
 
