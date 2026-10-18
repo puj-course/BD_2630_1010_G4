@@ -1,4 +1,4 @@
-```sql
+-- sql
 -- Entrega 2 - Consultas avanzadas, parte 1
 -- Analisis deportivo y operativo del Mundial
 
@@ -105,4 +105,4 @@ having count(p.id_partido) > 0
 order by
     e.anio,
     partidos_jugados desc;
-```
+
