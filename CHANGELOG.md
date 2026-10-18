@@ -201,7 +201,7 @@ Documentar la justificación formal del proceso de normalización en primera, se
 ### Tareas realizadas
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| Consultas avanzadas (Parte 2) | Juan Sebastian Quintero, Andrés Peña | sql/entrega2/consultas/consultas_avanzadas_parte1.sql | Construcción del segundo bloque de consultas avanzadas y validación de resultados. |
+| Consultas avanzadas (Parte 2) | Juan Sebastian Quintero, Andrés Peña | sql/entrega2/consultas/consultas_avanzadas_parte1.sql y features/consultas_avanzadas_parte2 | Construcción del segundo bloque de consultas avanzadas y validación de resultados. |
 | Jutificación de la Normalización del modelo | Diego Nicolas Moreno Alvarez, Pablo Samuel Leon Hernandez | docs/entrega2/normalizacion.md | Justificación técnica de 1FN, 2FN y 3FN para las tablas del modelo en un nuevo documento para docs en main. |
 | Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Registro consolidado de avances de la samena 4 entrega 2, ramas utilizadas y dificultades encontradas. |
 
