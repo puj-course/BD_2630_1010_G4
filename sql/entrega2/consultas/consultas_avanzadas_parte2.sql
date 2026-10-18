@@ -106,3 +106,25 @@ ORDER BY
     e.anio,
     jugadores_convocados DESC,
     s.pais;
+
+-- 7. Analisis de incidencias por tipo y edicion
+
+SELECT
+    e.anio,
+    i.tipo,
+    COUNT(i.id_incidencia) AS cantidad_incidencias,
+    ROUND(AVG(i.minuto), 2) AS minuto_promedio,
+    MIN(i.minuto) AS primer_minuto,
+    MAX(i.minuto) AS ultimo_minuto
+FROM incidencia i
+JOIN partido p
+    ON p.id_partido = i.id_partido
+JOIN edicion_mundial e
+    ON e.id_edicion = p.id_edicion
+GROUP BY
+    e.anio,
+    i.tipo
+HAVING COUNT(i.id_incidencia) >= 2
+ORDER BY
+    e.anio,
+    cantidad_incidencias DESC;
