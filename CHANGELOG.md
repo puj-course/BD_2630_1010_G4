@@ -192,7 +192,7 @@ Por completar según las dificultades identificadas durante la implementación, 
 
 Aquí tienes la entrada de la nueva semana con la plantilla y el formato exacto de tu CHANGELOG.md:
 
-Markdown
+
 ## Semana 8 (Entrega 2 - Semana 4)
 ### Objetivos de la semana
 
@@ -218,20 +218,34 @@ Finalmente, se actualizó el CHANGELOG.md para dejar constancia de las actividad
 ### Problemas encontrados
 
 Por completar según las dificultades identificadas durante la justificación teórica de dependencias funcional como errores previos revisados y buscar que la implementación sea consistente.
-### Objetivos de la semana\
-Completar los entregables finales de la Entrega 2 mediante la implementación de consultas avanzadas adicionales, la definición de roles y privilegios, la documentación de restricciones de acceso y la elaboración de casos de prueba exitosos y fallidos. Integrar las ramas pendientes en main y actualizar el CHANGELOG.md con el cierre de la entrega.\
-### Tareas realizadas\
-| Tarea	Responsable(s)	Rama utilizada	Descripción	\
-| Consultas avanzadas (Parte 2)	Por definir	sql/entrega2/consultas/consultas_avanzadas_parte2.sql	Completar las consultas avanzadas requeridas junto con la Parte 1, alcanzando un total de 6 a 10 consultas.	\
-| Roles y privilegios	Por definir	sql/entrega2/roles/roles_privilegios.sql	Definición de los roles Administrador del Torneo, Analista Deportivo y Auditor/Consulta, con sus respectivos privilegios.	\
-| Documentación de roles	Por definir	docs/entrega2/roles_privilegios.md	Documentación de las restricciones de acceso diferenciadas por rol.	\
-| Casos de prueba	Por definir	tests/entrega2/casos_prueba.md	Registro de pruebas exitosas y fallidas, incluyendo las operaciones ejecutadas y los resultados obtenidos.	\
-| Integración de ramas	Todo el equipo	main	Fusión de las ramas pendientes y validación de la integración final de los entregables.	\
-| Actualización del CHANGELOG	Diego Nicolas Moreno Alvarez	main	Registro consolidado de los avances finales y el cierre de la Entrega 2.	\
-\### Cambios principales\
-Se completará el archivo sql/entrega2/consultas/consultas_avanzadas_parte2.sql para complementar las consultas de la Parte 1 y alcanzar el total requerido de consultas avanzadas orientadas al análisis deportivo y operativo del torneo.\
-Se implementará el archivo sql/entrega2/roles/roles_privilegios.sql para establecer tres roles diferenciados según sus responsabilidades. Las restricciones de acceso correspondientes se documentarán en docs/entrega2/roles_privilegios.md.\
-Se elaborará tests/entrega2/casos_prueba.md para registrar escenarios exitosos y fallidos, incluyendo las operaciones ejecutadas y los resultados obtenidos.\
-Finalmente, se integrarán las ramas pendientes en main y se actualizará el CHANGELOG.md con el registro de los cambios correspondientes al cierre de la Entrega 2.\
-\### Problemas encontrados\
-Por completar según las dificultades identificadas durante la validación de las consultas avanzadas, la configuración de privilegios, la ejecución de los casos de prueba y la integración de las ramas pendientes.
+
+## Semana 8 (Entrega 2 - Semana 4)
+
+### Objetivos de la semana
+
+Completar los entregables finales de la Entrega 2 mediante la implementación de la segunda parte de consultas avanzadas, la definición de roles y privilegios, la documentación de restricciones de acceso y la elaboración de casos de prueba exitosos y fallidos. Integrar las ramas pendientes en main y actualizar el CHANGELOG.md.
+
+### Tareas realizadas
+| Tarea | Responsable(s) | Rama utilizada | Descripción |
+|------|------|------|------|
+| Consultas avanzadas (Parte 2) | Juan Sebastian Quintero, Andrés Peña | sql/entrega2/consultas/consultas_avanzadas_parte2.sql | Construcción del segundo bloque de consultas avanzadas y validación de resultados, completando entre ambos archivos el total requerido de consultas. |
+| Roles y privilegios | Por definir | sql/entrega2/roles/roles_privilegios.sql | Definición de los roles Administrador del Torneo, Analista Deportivo y Auditor/Consulta, con sus respectivos privilegios. |
+| Documentación de roles | Por definir | docs/entrega2/roles_privilegios.md | Documentación de las restricciones de acceso diferenciadas por rol. |
+| Casos de prueba | Por definir | tests/entrega2/casos_prueba.md | Registro de casos de prueba exitosos y fallidos, incluyendo las operaciones ejecutadas y los resultados obtenidos. |
+| Integración de ramas | Todo el equipo | main | Fusión de las ramas pendientes y validación de los entregables finales de la Entrega 2. |
+| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Registro consolidado de los avances finales, las ramas utilizadas y las dificultades encontradas durante el cierre de la entrega. |
+
+### Cambios principales
+
+Se completará el script \`sql/entrega2/consultas/consultas_avanzadas_parte2.sql\` para complementar las consultas de la Parte 1 y alcanzar un total de 6 a 10 consultas avanzadas orientadas al análisis deportivo y operativo del torneo.
+
+Se implementará el archivo \`sql/entrega2/roles/roles_privilegios.sql\` con los roles Administrador del Torneo, Analista Deportivo y Auditor/Consulta. Las restricciones de acceso y los permisos diferenciados se documentarán en \`docs/entrega2/roles_privilegios.md\`.
+
+Se elaborará el documento \`tests/entrega2/casos_prueba.md\` para registrar pruebas exitosas y fallidas, especificando las operaciones ejecutadas y los resultados obtenidos.
+
+Finalmente, se integrarán las ramas pendientes en main y se actualizará el CHANGELOG.md para dejar constancia de los entregables y las actividades correspondientes al cierre de la Entrega 2.
+
+### Problemas encontrados
+
+Por completar según las dificultades identificadas durante la validación de las consultas avanzadas, la asignación de privilegios, la ejecución de los casos de prueba y la integración de las ramas pendientes.
+
