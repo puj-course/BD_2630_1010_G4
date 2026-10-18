@@ -79,3 +79,30 @@ HAVING COUNT(DISTINCT p.id_partido) >= 2
 ORDER BY
     e.anio,
     partidos_asignados DESC;
+
+-- 6. Cantidad de convocados y capitanes por seleccion
+
+SELECT
+    e.anio,
+    s.pais AS seleccion,
+    COUNT(cj.id_jugador) AS jugadores_convocados,
+    SUM(
+        CASE
+            WHEN cj.es_capitan = 'SI' THEN 1
+            ELSE 0
+        END
+    ) AS cantidad_capitanes
+FROM seleccion s
+JOIN edicion_mundial e
+    ON e.id_edicion = s.id_edicion
+LEFT JOIN convocatoria_jugador cj
+    ON cj.id_seleccion = s.id_seleccion
+GROUP BY
+    e.anio,
+    s.id_seleccion,
+    s.pais
+HAVING COUNT(cj.id_jugador) > 0
+ORDER BY
+    e.anio,
+    jugadores_convocados DESC,
+    s.pais;
