@@ -223,7 +223,8 @@ Por completar según las dificultades identificadas durante la justificación te
 
 Completar los entregables finales de la Entrega 2 mediante la implementación de consultas avanzadas adicionales, la definición de roles y privilegios, la documentación de restricciones de acceso y la elaboración de casos de prueba exitosos y fallidos. Integrar las ramas pendientes en main y actualizar el CHANGELOG.md con el cierre de la entrega.
 
-\### Tareas realizadas
+\### 
+Tareas realizadas
 \| Tarea | Responsable(s) | Rama utilizada | Descripción |
 \|------|------|------|------|
 \| Consultas avanzadas (Parte 2) | Por definir | sql/entrega2/consultas/consultas_avanzadas_parte2.sql | Implementación del segundo bloque de consultas avanzadas para completar entre ambos archivos un total de 6 a 10 consultas. |
