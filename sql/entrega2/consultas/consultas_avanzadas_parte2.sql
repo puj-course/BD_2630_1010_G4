@@ -44,3 +44,38 @@ SELECT
 FROM ranking
 WHERE posicion <= 5
 ORDER BY anio, posicion, jugador;
+
+-- 5. Carga de trabajo de los árbitros por edición
+
+SELECT
+    e.anio,
+    a.id_arbitro,
+    a.nombre AS arbitro,
+    COUNT(DISTINCT p.id_partido) AS partidos_asignados,
+    SUM(
+        CASE
+            WHEN aa.rol = 'CENTRAL' THEN 1
+            ELSE 0
+        END
+    ) AS asignaciones_central,
+    SUM(
+        CASE
+            WHEN aa.rol = 'VAR' THEN 1
+            ELSE 0
+        END
+    ) AS asignaciones_var
+FROM asignacion_arbitral aa
+JOIN arbitro a
+    ON a.id_arbitro = aa.id_arbitro
+JOIN partido p
+    ON p.id_partido = aa.id_partido
+JOIN edicion_mundial e
+    ON e.id_edicion = p.id_edicion
+GROUP BY
+    e.anio,
+    a.id_arbitro,
+    a.nombre
+HAVING COUNT(DISTINCT p.id_partido) >= 2
+ORDER BY
+    e.anio,
+    partidos_asignados DESC;
