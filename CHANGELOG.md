@@ -228,8 +228,8 @@ Completar los entregables finales de la Entrega 2 mediante la implementación de
 ### Tareas realizadas
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| Consultas avanzadas (Parte 2) | Juan Sebastian Quintero, Andrés Peña | sql/entrega2/consultas/consultas_avanzadas_parte2.sql | Construcción del segundo bloque de consultas avanzadas y validación de resultados, completando entre ambos archivos el total requerido de consultas. |
-| Roles y privilegios | Por definir | sql/entrega2/roles/roles_privilegios.sql | Definición de los roles Administrador del Torneo, Analista Deportivo y Auditor/Consulta, con sus respectivos privilegios. |
+| Consultas avanzadas (Parte 2) |  Juan Quintero / Andrés Peña | sql/entrega2/consultas/consultas_avanzadas_parte2.sql | Construcción del segundo bloque de consultas avanzadas y validación de resultados, completando entre ambos archivos el total requerido de consultas. |
+| Roles y privilegios | Pablo Leon | sql/entrega2/roles/roles_privilegios.sql | Definición de los roles Administrador del Torneo, Analista Deportivo y Auditor/Consulta, con sus respectivos privilegios. |
 | Documentación de roles | Por definir | docs/entrega2/roles_privilegios.md | Documentación de las restricciones de acceso diferenciadas por rol. |
 | Casos de prueba | Por definir | tests/entrega2/casos_prueba.md | Registro de casos de prueba exitosos y fallidos, incluyendo las operaciones ejecutadas y los resultados obtenidos. |
 | Integración de ramas | Todo el equipo | main | Fusión de las ramas pendientes y validación de los entregables finales de la Entrega 2. |
@@ -237,13 +237,12 @@ Completar los entregables finales de la Entrega 2 mediante la implementación de
 
 ### Cambios principales
 
-Se completará el script \`sql/entrega2/consultas/consultas_avanzadas_parte2.sql\` para complementar las consultas de la Parte 1 y alcanzar un total de 6 a 10 consultas avanzadas orientadas al análisis deportivo y operativo del torneo.
-
-Se implementará el archivo \`sql/entrega2/roles/roles_privilegios.sql\` con los roles Administrador del Torneo, Analista Deportivo y Auditor/Consulta. Las restricciones de acceso y los permisos diferenciados se documentarán en \`docs/entrega2/roles_privilegios.md\`.
+Se completará el script \`sql/entrega2/consultas/consultas_avanzadas_parte2.sql\` para complementar las consultas de la Parte 1 y alcanzar un total de 6 a 10 consultas avanzadas orientadas al análisis deportivo y operativo del torneo, estas se dividieron equitativamente entre 2 personas.
+Se implementará el archivo \`sql/entrega2/roles/roles_privilegios.sql\` con los roles Administrador del Torneo, Analista Deportivo y Auditor/Consulta. Las restricciones de acceso y los permisos diferenciados se documentarán en \`docs/entrega2/roles_privilegios.md\` especifiando las mismas.
 
 Se elaborará el documento \`tests/entrega2/casos_prueba.md\` para registrar pruebas exitosas y fallidas, especificando las operaciones ejecutadas y los resultados obtenidos.
 
-Finalmente, se integrarán las ramas pendientes en main y se actualizará el CHANGELOG.md para dejar constancia de los entregables y las actividades correspondientes al cierre de la Entrega 2.
+Finalmente, se integrarán las ramas pendientes en main y se actualizará el CHANGELOG.md para dejar constancia de los entregables y las actividades correspondientes al cierre de la Entrega 2 por cada integrante.
 
 ### Problemas encontrados
 
