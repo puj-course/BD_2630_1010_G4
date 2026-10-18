@@ -128,3 +128,70 @@ HAVING COUNT(i.id_incidencia) >= 2
 ORDER BY
     e.anio,
     cantidad_incidencias DESC;
+
+-- 8. Partidos con muchos goles o grandes diferencias
+
+WITH marcador AS (
+    SELECT
+        p.id_partido,
+        e.anio,
+        f.nombre AS fase,
+        MAX(
+            CASE
+                WHEN pp.condicion = 'LOCAL'
+                THEN s.pais
+            END
+        ) AS seleccion_local,
+        MAX(
+            CASE
+                WHEN pp.condicion = 'LOCAL'
+                THEN pp.goles_marcados
+            END
+        ) AS goles_local,
+        MAX(
+            CASE
+                WHEN pp.condicion = 'VISITANTE'
+                THEN s.pais
+            END
+        ) AS seleccion_visitante,
+        MAX(
+            CASE
+                WHEN pp.condicion = 'VISITANTE'
+                THEN pp.goles_marcados
+            END
+        ) AS goles_visitante
+    FROM partido p
+    JOIN edicion_mundial e
+        ON e.id_edicion = p.id_edicion
+    JOIN fase f
+        ON f.id_fase = p.id_fase
+    JOIN participacion_partido pp
+        ON pp.id_partido = p.id_partido
+    JOIN seleccion s
+        ON s.id_seleccion = pp.id_seleccion
+    GROUP BY
+        p.id_partido,
+        e.anio,
+        f.nombre
+)
+SELECT
+    anio,
+    id_partido,
+    fase,
+    seleccion_local,
+    goles_local,
+    seleccion_visitante,
+    goles_visitante,
+    goles_local + goles_visitante AS goles_totales,
+    ABS(goles_local - goles_visitante) AS diferencia_goles
+FROM marcador
+WHERE goles_local IS NOT NULL
+  AND goles_visitante IS NOT NULL
+  AND (
+      goles_local + goles_visitante >= 5
+      OR ABS(goles_local - goles_visitante) >= 3
+  )
+ORDER BY
+    anio,
+    goles_totales DESC,
+    diferencia_goles DESC;
