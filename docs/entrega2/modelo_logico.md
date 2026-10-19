@@ -21,7 +21,7 @@ El diseño busca mantener la información organizada y evitar la duplicación in
 
 ---
 
-# 2. Estructura general del modelo
+## 2. Estructura general del modelo
 
 El modelo lógico está compuesto por **16 tablas**:
 
@@ -44,316 +44,165 @@ El modelo lógico está compuesto por **16 tablas**:
 
 ---
 
-# 3. Nuevas tablas incorporadas
+## 3. Nuevas tablas incorporadas
 
-El modelo inicial contaba con las entidades básicas para representar una edición, selecciones, estadios y partidos.
+El modelo inicial contaba únicamente con las entidades básicas para representar una edición, selecciones, estadios y partidos. Para cumplir con los requerimientos integrales del sistema se incorporaron entidades adicionales que permiten detallar de manera exhaustiva la organización y el desarrollo operativo de la competición.
 
-Para cumplir con los requerimientos del sistema se incorporaron nuevas entidades que permiten representar con mayor detalle la organización y el desarrollo del torneo.
+### 3.1. SEDE
 
-## 3.1. SEDE
+Representa los países que participan como sedes de una determinada edición del Mundial. Una edición puede contar con una o múltiples sedes compartidas.
 
-Representa los países que participan como sedes de una determinada edición del Mundial.
-
-Una edición puede tener una o varias sedes.
-
-**Clave primaria:**
-- `id_sede`
-
-**Clave foránea:**
-- `id_edicion`
-
-**Restricción UNIQUE:**
-- `(id_edicion, pais)`
+- **Clave primaria:** `id_sede`
+- **Clave foránea:** `id_edicion`
+- **Restricción UNIQUE:** `(id_edicion, pais)`
 
 ---
 
-## 3.2. CIUDAD
+### 3.2. CIUDAD
 
-Representa las ciudades pertenecientes a una sede y permite organizar los estadios de acuerdo con su ubicación.
+Representa las ciudades pertenecientes a una sede y permite organizar los estadios de acuerdo con su ubicación geográfica exacta.
 
-**Clave primaria:**
-- `id_ciudad`
-
-**Clave foránea:**
-- `id_sede`
-
-**Restricción UNIQUE:**
-- `(id_sede, nombre)`
+- **Clave primaria:** `id_ciudad`
+- **Clave foránea:** `id_sede`
+- **Restricción UNIQUE:** `(id_sede, nombre)`
 
 ---
 
-## 3.3. FASE
+### 3.3. FASE
 
-Representa las diferentes fases de una edición del torneo.
+Representa las diferentes etapas competitivas de una edición del torneo (por ejemplo: Fase de grupos, Octavos de final, Cuartos de final, Semifinal, Tercer puesto, Final).
 
-Ejemplos:
-
-- Fase de grupos
-- Octavos de final
-- Cuartos de final
-- Semifinal
-- Tercer puesto
-- Final
-
-**Clave primaria:**
-- `id_fase`
-
-**Clave foránea:**
-- `id_edicion`
-
-**Restricción UNIQUE:**
-- `(id_edicion, nombre)`
+- **Clave primaria:** `id_fase`
+- **Clave foránea:** `id_edicion`
+- **Restricción UNIQUE:** `(id_edicion, nombre)`
 
 ---
 
-## 3.4. GRUPO
+### 3.4. GRUPO
 
-Representa los grupos correspondientes a la fase de grupos de una edición.
+Representa los grupos pertenecientes a la fase inicial de una edición (por ejemplo: Grupo A, Grupo B, Grupo C, Grupo D).
 
-Ejemplos:
-
-- Grupo A
-- Grupo B
-- Grupo C
-- Grupo D
-
-**Clave primaria:**
-- `id_grupo`
-
-**Clave foránea:**
-- `id_edicion`
-
-**Restricción UNIQUE:**
-- `(id_edicion, nombre)`
+- **Clave primaria:** `id_grupo`
+- **Clave foránea:** `id_edicion`
+- **Restricción UNIQUE:** `(id_edicion, nombre)`
 
 ---
 
-## 3.5. FEDERACION
+### 3.5. FEDERACION
 
-Representa la federación nacional a la que pertenece una selección.
+Representa la federación nacional a la que pertenece una selección y consolida la relación organizativa con su respectiva confederación continental.
 
-También permite asociar la federación con su respectiva confederación.
-
-**Clave primaria:**
-- `id_federacion`
-
-**Restricción UNIQUE:**
-- `sigla`
+- **Clave primaria:** `id_federacion`
+- **Restricción UNIQUE:** `sigla`
 
 ---
 
-## 3.6. JUGADOR
+### 3.6. JUGADOR
 
-Representa a los jugadores que pueden participar en diferentes ediciones del torneo.
+Representa a los futbolistas habilitados para competir. La información histórica del jugador se mantiene desacoplada de la convocatoria específica, permitiendo registrar su participación en múltiples ediciones a lo largo de su carrera.
 
-La información del jugador se mantiene separada de su convocatoria, ya que un mismo jugador puede participar en diferentes ediciones.
-
-**Clave primaria:**
-- `id_jugador`
+- **Clave primaria:** `id_jugador`
 
 ---
 
-## 3.7. CONVOCATORIA_JUGADOR
+### 3.7. CONVOCATORIA_JUGADOR
 
-Representa la convocatoria de un jugador para una selección en una determinada edición.
+Representa el registro oficial de un jugador convocado por una selección para una edición específica del torneo. Permite gestionar datos propios del torneo como el número de camiseta asignado y el rol de capitán.
 
-Esta tabla permite registrar información específica de la participación del jugador, como:
-
-- Número de camiseta.
-- Si es capitán.
-
-La relación entre `JUGADOR` y `SELECCION` es de muchos a muchos, por lo que se utiliza esta tabla intermedia.
-
-**Clave primaria propuesta:**
-- `id_jugador`
-- `id_seleccion`
-
-**Restricción UNIQUE:**
-- `(id_jugador, id_seleccion)`
+- **Clave primaria:** `id_convocatoria`
+- **Claves foráneas:** `id_jugador`, `id_seleccion`
+- **Restricción UNIQUE:** `(id_seleccion, dorsal)`
 
 ---
 
-## 3.8. ARBITRO
+### 3.8. ARBITRO
 
-Representa los árbitros que pueden ser asignados a los diferentes partidos.
+Representa a los jueces y oficiales de juzgamiento habilitados por la FIFA para dirigir partidos en el torneo.
 
-**Clave primaria:**
-- `id_arbitro`
-
----
-
-## 3.9. ASIGNACION_ARBITRAL
-
-Representa la asignación de árbitros a los partidos y permite indicar el rol que desempeña cada árbitro.
-
-Los roles contemplados incluyen:
-
-- Central.
-- Asistente 1.
-- Asistente 2.
-- Cuarto árbitro.
-- VAR.
-- AVAR.
-
-La relación entre `ARBITRO` y `PARTIDO` es de muchos a muchos, por lo que se utiliza esta tabla intermedia.
-
-**Clave primaria propuesta:**
-- `id_partido`
-- `id_arbitro`
-
-**Restricción UNIQUE:**
-- `(id_partido, rol)`
+- **Clave primaria:** `id_arbitro`
 
 ---
 
-## 3.10. ESTADISTICA_JUGADOR_PARTIDO
+### 3.9. ASIGNACION_ARBITRAL
 
-Permite registrar las estadísticas individuales de un jugador durante un partido.
+Representa la designación oficial de los árbitros en cada encuentro e identifica el rol específico asignado en la ternas u oficiales de juzgamiento (Central, Asistente 1, Asistente 2, Cuarto árbitro, VAR, AVAR).
 
-Entre los datos registrados se encuentran:
-
-- Goles.
-- Asistencias.
-- Tarjetas amarillas.
-- Tarjetas rojas.
-- Tiros.
-- Minutos jugados.
-
-La relación entre `JUGADOR` y `PARTIDO` es de muchos a muchos, por lo que esta tabla funciona como entidad intermedia.
-
-**Clave primaria:**
-- `id_estadistica`
-
-**Restricción UNIQUE:**
-- `(id_partido, id_jugador)`
+- **Clave primaria:** `id_asignacion`
+- **Claves foráneas:** `id_partido`, `id_arbitro`
+- **Restricción UNIQUE:** `(id_partido, rol)`
 
 ---
 
-## 3.11. INCIDENCIA
+### 3.10. ESTADISTICA_JUGADOR_PARTIDO
 
-Representa situaciones particulares ocurridas durante un partido.
+Permite registrar las métricas individuales de rendimiento de un jugador durante un partido determinado (goles, asistencias, tarjetas amarillas, tarjetas rojas, tiros al arco y minutos disputados).
 
-Algunos ejemplos son:
-
-- Condiciones climáticas.
-- Invasión de campo.
-- Suspensión temporal.
-- Revisión prolongada del VAR.
-
-**Clave primaria:**
-- `id_incidencia`
-
-**Clave foránea:**
-- `id_partido`
+- **Clave primaria:** `id_estadistica`
+- **Claves foráneas:** `id_partido`, `id_jugador`
+- **Restricción UNIQUE:** `(id_partido, id_jugador)`
 
 ---
 
-# 4. Tablas principales del modelo
+### 3.11. INCIDENCIA
 
-Además de las nuevas entidades, se mantienen las tablas principales del modelo inicial.
+Permite documentar eventos e incidencias extraordinarias reportadas en el transcurso de un encuentro (condiciones climáticas adversas, invasión de campo, suspensiones temporales, revisiones de VAR, entre otras).
 
-## 4.1. EDICION_MUNDIAL
-
-Representa una edición específica del Mundial.
-
-Contiene información general como:
-
-- Identificador de la edición.
-- Año.
-- Lema.
-- Fecha de inicio.
-- Fecha de finalización.
-
-**PK:** `id_edicion`
-
-**UNIQUE:** `anio`
+- **Clave primaria:** `id_incidencia`
+- **Clave foránea:** `id_partido`
 
 ---
 
-## 4.2. SELECCION
+## 4. Tablas principales del modelo
 
-Representa una selección participante en una edición determinada.
+### 4.1. EDICION_MUNDIAL
 
-Una selección está relacionada con:
+Entidad principal que almacena los datos institucionales y temporales de una edición específica del torneo Mundial.
 
-- Una edición.
-- Una federación.
-- Opcionalmente, un grupo.
-
-**PK:** `id_seleccion`
-
-**FK:**
-- `id_edicion`
-- `id_federacion`
-- `id_grupo`
-
-**UNIQUE:**
-- `(id_edicion, pais)`
+- **Clave primaria:** `id_edicion`
+- **Restricción UNIQUE:** `anio`
 
 ---
 
-## 4.3. ESTADIO
+### 4.2. SELECCION
 
-Representa los estadios utilizados durante el torneo.
+Representa a cada equipo nacional participante dentro de una edición determinada. Garantiza la vinculación con su federación de origen y su asignación a un grupo durante la fase inicial.
 
-Cada estadio pertenece a una ciudad.
-
-**PK:** `id_estadio`
-
-**FK:**
-- `id_ciudad`
-
-**UNIQUE:**
-- `(id_ciudad, nombre)`
+- **Clave primaria:** `id_seleccion`
+- **Claves foráneas:** `id_edicion`, `id_federacion`, `id_grupo`
+- **Restricción UNIQUE:** `(id_edicion, pais)`
 
 ---
 
-## 4.4. PARTIDO
+### 4.3. ESTADIO
 
-Representa un partido disputado durante una edición del torneo.
+Almacena la infraestructura física en la que se disputan los partidos, asociando cada recinto a su respectiva ciudad sede.
 
-Cada partido está asociado con:
-
-- Una edición.
-- Una fase.
-- Un estadio.
-
-También almacena la fecha y hora y la asistencia registrada.
-
-**PK:** `id_partido`
-
-**FK:**
-- `id_edicion`
-- `id_fase`
-- `id_estadio`
+- **Clave primaria:** `id_estadio`
+- **Clave foránea:** `id_ciudad`
+- **Restricción UNIQUE:** `(id_ciudad, nombre)`
 
 ---
 
-## 4.5. PARTICIPACION_PARTIDO
+### 4.4. PARTIDO
 
-Representa la participación de una selección en un partido.
+Representa la unidad básica de competición deportiva. Vincula la edición, fase, estadio, fecha, hora y datos de asistencia del público.
 
-Permite almacenar:
-
-- Selección.
-- Partido.
-- Condición: local o visitante.
-- Goles marcados.
-
-Esta tabla permite representar la relación de muchos a muchos entre `PARTIDO` y `SELECCION`.
-
-**PK propuesta:**
-- `id_partido`
-- `id_seleccion`
-
-**UNIQUE:**
-- `(id_partido, id_seleccion)`
+- **Clave primaria:** `id_partido`
+- **Claves foráneas:** `id_edicion`, `id_fase`, `id_estadio`
 
 ---
 
-# 5. Relaciones del modelo
+### 4.5. PARTICIPACION_PARTIDO
 
-Las principales relaciones entre las tablas son las siguientes:
+Representa la condición de competencia de cada selección en un partido determinado, registrando el rol táctico (local o visitante) y los goles acumulados al cierre del encuentro.
+
+- **Clave primaria:** `id_participacion`
+- **Claves foráneas:** `id_partido`, `id_seleccion`
+- **Restricción UNIQUE:** `(id_partido, id_seleccion)`
+
+---
+
+## 5. Matriz de Relaciones del Modelo
 
 | Tabla origen | Tabla destino | Cardinalidad |
 |---|---|---|
@@ -380,17 +229,22 @@ Las principales relaciones entre las tablas son las siguientes:
 
 ---
 
-# 6. Relaciones muchos a muchos
+## 6. Resolucion de Relaciones Muchos a Muchos
 
-Para evitar relaciones N:M directas, se utilizan entidades intermedias.
+Para preservar la Tercera Forma Normal (3FN) y asegurar la integridad referencial, las relaciones muchos a muchos se implementan mediante tablas asociativas con llaves primarias subrogadas y restricciones `UNIQUE` compuestas:
 
-## 6.1. SELECCION — PARTIDO
+### 6.1. SELECCION — PARTIDO
+Resuelto mediante `PARTICIPACION_PARTIDO`.
+`SELECCION (1:N) ➔ PARTICIPACION_PARTIDO (N:1) ➔ PARTIDO`
 
-Una selección puede jugar muchos partidos y un partido involucra varias selecciones.
+### 6.2. JUGADOR — SELECCION
+Resuelto mediante `CONVOCATORIA_JUGADOR`.
+`JUGADOR (1:N) ➔ CONVOCATORIA_JUGADOR (N:1) ➔ SELECCION`
 
-Se resuelve mediante:
+### 6.3. ARBITRO — PARTIDO
+Resuelto mediante `ASIGNACION_ARBITRAL`.
+`ARBITRO (1:N) ➔ ASIGNACION_ARBITRAL (N:1) ➔ PARTIDO`
 
-`PARTICIPACION_PARTIDO`
-
-```text
-SELECCION 1:N PARTICIPACION_PARTIDO N:1 PARTIDO
+### 6.4. JUGADOR — PARTIDO
+Resuelto mediante `ESTADISTICA_JUGADOR_PARTIDO`.
+`JUGADOR (1:N) ➔ ESTADISTICA_JUGADOR_PARTIDO (N:1) ➔ PARTIDO`
