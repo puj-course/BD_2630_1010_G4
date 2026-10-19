@@ -6,7 +6,7 @@ A continuación se presentan las pruebas de validación sobre el esquema en form
 
 ## 1. Escenarios Exitosos
 
-```sql
+
 -- CP-EXITO-01: Registro de edición con fechas consistentes
 -- Debe insertar correctamente al cumplir que fecha_fin sea posterior a fecha_inicio.
 insert into edicion_mundial (id_edicion, anio, lema, fecha_inicio, fecha_fin)
@@ -66,9 +66,9 @@ insert into estadistica_jugador_partido (
     tarjetas_amarillas, tarjetas_rojas, tiros, minutos_jugados
 ) values (1, 1, 1, 2, 1, 0, 0, 4, 90);
 -- Resultado: 1 fila insertada. Valores dentro de los rangos numéricos válidos.
-
-
-SQL
+```
+2. Escenarios Fallidos 
+````
 -- CP-FALLO-01: Fechas invertidas en edición mundial
 -- Intento de registrar una fecha de finalización previa al inicio del torneo.
 insert into edicion_mundial (id_edicion, anio, lema, fecha_inicio, fecha_fin)
