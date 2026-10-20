@@ -116,6 +116,9 @@ ORDER BY
 
 -- 7. Partidos con muchos goles o grandes diferencias
 
+--Analiza los partidos con mayor cantidad de goles (5 o más entre los dos equipos) y
+--La diferencia de gol más alta
+
 WITH marcador AS (
     SELECT
         p.id_partido,
