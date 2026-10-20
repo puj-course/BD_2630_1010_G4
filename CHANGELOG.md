@@ -170,10 +170,10 @@ Implementar en SQL el modelo lógico ampliado mediante la creación de todas las
 ### Tareas realizadas
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| | Juan Sebastian Quintero |  |  |
+| Carga de datos iniciales. | Juan Sebastian Quintero | sql/entrega2/dml/carga_datos_prueba.sql | Dataset de prueba coherente para todas las entidades del modelo ampliado |
 | Carga de datos inciales. | Diego Nicolas Moreno Alvarez | sql/entrega2/dml/carga_datos_prueba.sql | Dataset de prueba coherente para todas las entidades del modelo ampliado. |
 |  Modelo Fisíco | Pablo Samuel Leon Hernandez | docs/entrega2/modelo_fisico.md | Diagrama físico y justificación de los índices creados.  |
-| | Andrés Peña |  |  |
+| Modelo ampliado .sql con restricciones. | Andrés Peña |  <sql/entrega2/ddl/ddl_modelo_ampliado.sql | Creación de todas las tablas del modelo ampliado |
 | Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main/CHANGELOG.md | Registro de los cambios finales realizados durante la Entrega 1. |
 ### Cambios principales
 
@@ -193,7 +193,7 @@ Por completar según las dificultades identificadas durante la implementación, 
 Aquí tienes la entrada de la nueva semana con la plantilla y el formato exacto de tu CHANGELOG.md:
 
 
-## Semana 8 (Entrega 2 - Semana 4)
+## Semana 7 (Entrega 2 - Semana 3)
 ### Objetivos de la semana
 
 Documentar la justificación formal del proceso de normalización en primera, segunda y tercera forma normal (1FN, 2FN y 3FN) sobre las 16 entidades del modelo relacional ampliado. Implementar la primera parte de consultas avanzadas orientadas al análisis deportivo y operativo del torneo con agregaciones multinivel en SQL, coordinar el trabajo por ramas del equipo y actualizar el CHANGELOG.md.
