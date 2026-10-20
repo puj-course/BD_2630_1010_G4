@@ -114,30 +114,7 @@ ORDER BY
     jugadores_convocados DESC,
     s.pais;
 
--- 7. Analisis de incidencias por tipo y edicion
--- Se cuenta el tipo de incidencia y el minuto donde sucedio (redondea para que solo sea el minuto)
--- También coloca el minuto más temprano donde se hizo y el más tardío donde se hizo esa incidencia
-SELECT
-    e.anio,
-    i.tipo,
-    COUNT(i.id_incidencia) AS cantidad_incidencias,
-    ROUND(AVG(i.minuto), 2) AS minuto_promedio,
-    MIN(i.minuto) AS primer_minuto,
-    MAX(i.minuto) AS ultimo_minuto
-FROM incidencia i
-JOIN partido p
-    ON p.id_partido = i.id_partido
-JOIN edicion_mundial e
-    ON e.id_edicion = p.id_edicion
-GROUP BY
-    e.anio,
-    i.tipo
-HAVING COUNT(i.id_incidencia) >= 2
-ORDER BY
-    e.anio,
-    cantidad_incidencias DESC;
-
--- 8. Partidos con muchos goles o grandes diferencias
+-- 7. Partidos con muchos goles o grandes diferencias
 
 WITH marcador AS (
     SELECT
@@ -205,7 +182,7 @@ ORDER BY
     diferencia_goles DESC;
 
 
--- 9. Selecciones con mejor rendimiento por edicion
+-- 8. Selecciones con mejor rendimiento por edicion
 
 WITH rendimiento AS (
     SELECT
@@ -255,7 +232,7 @@ ORDER BY
     diferencia_gol DESC;
 
 
--- 10. Estadios con ocupacion superior al promedio por fase
+-- 9. Estadios con ocupacion superior al promedio por fase
 
 WITH ocupacion AS (
     SELECT
