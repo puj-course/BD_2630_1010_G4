@@ -230,7 +230,7 @@ Completar los entregables finales de la Entrega 2 mediante la implementación de
 |------|------|------|------|
 | Consultas avanzadas (Parte 2) |  Juan Quintero / Andrés Peña | sql/entrega2/consultas/consultas_avanzadas_parte2.sql | Construcción del segundo bloque de consultas avanzadas y validación de resultados, completando entre ambos archivos el total requerido de consultas. |
 | Roles y privilegios | Pablo Leon | sql/entrega2/roles/roles_privilegios.sql | Definición de los roles Administrador del Torneo, Analista Deportivo y Auditor/Consulta, con sus respectivos privilegios. |
-| Documentación de roles | Por definir | docs/entrega2/roles_privilegios.md | Documentación de las restricciones de acceso diferenciadas por rol. |
+| Documentación de roles | Pablo Leon | docs/entrega2/roles_privilegios.md | Documentación de las restricciones de acceso diferenciadas por rol. |
 | Casos de prueba | Por definir | tests/entrega2/casos_prueba.md | Registro de casos de prueba exitosos y fallidos, incluyendo las operaciones ejecutadas y los resultados obtenidos. |
 | Integración de ramas | Todo el equipo | main | Fusión de las ramas pendientes y validación de los entregables finales de la Entrega 2. |
 | Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Registro consolidado de los avances finales, las ramas utilizadas y las dificultades encontradas durante el cierre de la entrega. |
