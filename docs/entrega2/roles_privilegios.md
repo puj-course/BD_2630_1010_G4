@@ -12,7 +12,7 @@ de funciones
 
 ---
 
-# 2. Administrador Deportivo (`rol_admin_deportivo`)
+# 2. Analista Deportivo (`rol_analista`)
 
 **Proposito:** registrar y analizar los eventos ocurridos durante los partidos
 
