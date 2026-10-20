@@ -1,6 +1,4 @@
-/*
-    Consutlas avanzadas pt2. (desde la 3ra consulta de la parte 1, hasta la 8va)
-*/
+--Consutlas avanzadas pt2. (desde la 3ra consulta de la parte 1, hasta la 8va)
 -- 4. Ranking de jugadores con más tarjetas por edición
 
 WITH disciplina AS (
