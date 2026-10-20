@@ -1,3 +1,4 @@
+--Datos de prueba 
 select column_name, nullable
 from user_tab_columns
 where table_name = 'EDICION_MUNDIAL';
@@ -334,5 +335,3 @@ values (2, 3, 'TARJETA AMARILLA', 'Amonestación a Doyle Jarrett (Marruecos)', 3
 insert into incidencia (id_incidencia, id_partido, tipo, descripcion, minuto)
 values (3, 6, 'GOL ANULADO', 'Gol anulado por fuera de juego', 61);
 
-
---Notas finales algunos modelos no correran la // como caracter para comentario validos.
