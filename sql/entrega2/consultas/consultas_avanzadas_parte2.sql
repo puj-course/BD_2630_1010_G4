@@ -87,6 +87,8 @@ ORDER BY
 
 -- 6. Cantidad de convocados y capitanes por seleccion
 
+--Se miran cuantas selecciones hubo convocados y se suman los capitanes (con SUM) y usando CASE para ver el rol
+--Luego filtra las selecciones vacías para que solo muestren las que tienen registros (usando el HAVING)
 SELECT
     e.anio,
     s.pais AS seleccion,
@@ -113,7 +115,8 @@ ORDER BY
     s.pais;
 
 -- 7. Analisis de incidencias por tipo y edicion
-
+-- Se cuenta el tipo de incidencia y el minuto donde sucedio (redondea para que solo sea el minuto)
+-- También coloca el minuto más temprano donde se hizo y el más tardío donde se hizo esa incidencia
 SELECT
     e.anio,
     i.tipo,
