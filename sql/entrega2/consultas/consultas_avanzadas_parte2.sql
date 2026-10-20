@@ -1,6 +1,7 @@
 --Consutlas avanzadas pt2. (desde la 3ra consulta de la parte 1, hasta la 8va)
--- 4. Ranking de jugadores con más tarjetas por edición
+-- 4. Ranking de jugadores con más tarjetas por edición (suma tanto las rojas cómo amarillas)
 
+-- Disciplina usa jugador, edicion y estadística de jugador y lo agrupa por jugador y edicion.
 WITH disciplina AS (
     SELECT
         e.id_edicion,
@@ -43,7 +44,12 @@ FROM ranking
 WHERE posicion <= 5
 ORDER BY anio, posicion, jugador;
 
+--Se usa DENSE_RANK para poder hacer un ranking partiendolo por edición, y luego se usa el where para solo tener los 5 con más tarjetas
+
 -- 5. Carga de trabajo de los árbitros por edición
+
+--Evalúa a los jueces del torneo, calculando cuántos partidos dirigieron en total y
+--mira cuántas veces actuaron como árbitros CENTRAL o en el VAR, filtra solo a los que tuvieron una participación alta (al menos 2 partidos).
 
 SELECT
     e.anio,
@@ -51,6 +57,7 @@ SELECT
     a.nombre AS arbitro,
     COUNT(DISTINCT p.id_partido) AS partidos_asignados,
     SUM(
+    --Usa CASE para condicionar el rol (ya sea central o VAR)
         CASE
             WHEN aa.rol = 'CENTRAL' THEN 1
             ELSE 0
