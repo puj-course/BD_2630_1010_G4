@@ -189,8 +189,7 @@ Problemas encontrados
 
 Por completar según las dificultades identificadas durante la implementación, la carga de datos y la validación del modelo físico.
 
-
-Aquí tienes la entrada de la nueva semana con la plantilla y el formato exacto de tu CHANGELOG.md:
+Problemas de formato en el modelo, por que aun no habiamos visto completamente el uso de la herramienta, lo que genero discordia entre los grupos, sin emabrgo gracias a la documentacion del curso se pudo generar y superar probelmas. Ej: No sabiamos compartir el archivo con data modeler,donde juan quintero envio envio dmd sin carpeta hast que solucinamos enviando ddl y dml, haciendo ingenieria inversa
 
 
 ## Semana 7 (Entrega 2 - Semana 3)
@@ -217,7 +216,7 @@ Finalmente, se actualizó el CHANGELOG.md para dejar constancia de las actividad
 
 ### Problemas encontrados
 
-Por completar según las dificultades identificadas durante la justificación teórica de dependencias funcional como errores previos revisados y buscar que la implementación sea consistente.
+Por completar según las dificultades identificadas durante la justificación teórica de dependencias funcional como errores previos revisados y buscar que la implementación sea consistente, admito que aún no se habia terminado de comprender normalización por lo que se uso como guia herramientas externas como modelos de ia para confirmar que se cumplieron los requisitos de las 3 primeras formas. 
 
 ## Semana 8 (Entrega 2 - Semana 4)
 
