@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados de Partidos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <a href="/" class="btn btn-outline-secondary mb-3">← Volver al Inicio</a>
+    <h2 class="mb-4">Resultados y Goles por Partido</h2>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID Participación</th>
+                <th>ID Partido</th>
+                <th>ID Selección</th>
+                <th>Condición (Local/Visitante)</th>
+                <th>Goles Marcados</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="part : ${participaciones}">
+                <td th:text="${part.idParticipacion}">1</td>
+                <td th:text="${part.idPartido}">1</td>
+                <td th:text="${part.idSeleccion}">1</td>
+                <td th:text="${part.condicion}">LOCAL</td>
+                <td th:text="${part.golesMarcados}">2</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
