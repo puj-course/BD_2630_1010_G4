@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head><title>Sedes Oficiales - FIFA World Cup</title></head>
+<body>
+<section>
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h2 class="fw-bold text-dark"><i class="fa-solid fa-earth-americas text-primary me-2"></i> Países y Sedes Anfitrionas</h2>
+            <p class="text-muted">Naciones organizadoras habilitadas por edición del torneo.</p>
+        </div>
+        <div class="col-auto">
+            <a href="/ciudades" class="btn btn-outline-primary btn-sm me-2"><i class="fa-solid fa-city me-1"></i> Ver Ciudades</a>
+            <a href="/" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-house me-1"></i> Inicio</a>
+        </div>
+    </div>
+
+    <div class="card p-3 bg-white shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover text-center align-middle mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID Sede</th>
+                        <th class="text-start ps-3">País Anfitrión</th>
+                        <th>Edición (Ref)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${sedes == null || sedes.empty}">
+                        <td colspan="3" class="text-muted py-4">No hay sedes registradas en el sistema.</td>
+                    </tr>
+                    <tr th:each="s : ${sedes}">
+                        <td th:text="${s.idSede}">1</td>
+                        <td class="fw-bold text-start ps-3" th:text="${s.pais}">País</td>
+                        <td><span class="badge bg-secondary px-3" th:text="'Edición #' + ${s.idEdicion}">1</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>
