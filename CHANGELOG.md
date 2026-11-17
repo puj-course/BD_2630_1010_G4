@@ -288,8 +288,8 @@ Construir la estructura base de la aplicación web en Spring Boot conectada a la
 ### Tareas realizadas
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| Estructura base y conexión BD | Juan Sebastian Quintero | features/app-base | Configuración del proyecto Spring Boot, dependencias Maven, entidades JPA y conexión JDBC a Oracle en `app/`. |
-| Controladores y vistas de catálogos | Juan Sebastian Quintero / Andrés Peña | features/catalogos-web | Implementación de `CatalogoController`, repositorios JPA y plantillas HTML en Thymeleaf para ediciones, sedes, ciudades, estadios, grupos, selecciones, jugadores, convocatorias y partidos. |
+| Estructura base y conexión BD | Juan Sebastian Quintero | features/app | Configuración del proyecto Spring Boot, dependencias Maven, entidades JPA y conexión JDBC a Oracle en `app/`. |
+| Controladores y vistas de catálogos | Juan Sebastian Quintero / Andrés Peña | features/app | Implementación de `CatalogoController`, repositorios JPA y plantillas HTML en Thymeleaf para ediciones, sedes, ciudades, estadios, grupos, selecciones, jugadores, convocatorias y partidos. |
 | Documentación de arquitectura | Diego Nicolas Moreno Alvarez / Pablo Samuel Leon Hernandez | docs/arquitectura-app | Descripción del stack tecnológico, capas del backend, flujo de comunicación y consultas clave en `docs/entrega3/arquitectura_aplicacion.md`. |
 | Guía de ejecución local | Diego Nicolas Moreno Alvarez | docs/app-readme | Redacción de instrucciones de configuración y arranque local de la aplicación en `app/README.md`. |
 | Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Registro de los avances de arquitectura y desarrollo inicial de la aplicación web. |
@@ -318,8 +318,8 @@ Completar la aplicación web con el módulo de reportes estadísticos, integraci
 ### Tareas realizadas
 | Tarea | Responsable(s) | Rama utilizada | Descripción |
 |------|------|------|------|
-| Módulo de reportes y conexión PL/SQL | Juan Sebastian Quintero | features/reportes-plsql | Implementación de `ReporteController`, `ReporteRepository` y `PlSqlFunctionRepository` para tabla de posiciones, ranking de goleadores, auditoría y pruebas normativas en vivo. |
-| Vistas de reportes y panel de control | Juan Sebastian Quintero / Andrés Peña | features/vistas-reportes | Desarrollo de las interfaces `tabla_posiciones.html`, `goleadores.html`, `incidencias.html` y `prueba_plsql.html`. |
+| Módulo de reportes y conexión PL/SQL | Juan Sebastian Quintero | features/app | Implementación de `ReporteController`, `ReporteRepository` y `PlSqlFunctionRepository` para tabla de posiciones, ranking de goleadores, auditoría y pruebas normativas en vivo. |
+| Vistas de reportes y panel de control | Juan Sebastian Quintero / Andrés Peña | features/app | Desarrollo de las interfaces `tabla_posiciones.html`, `goleadores.html`, `incidencias.html` y `prueba_plsql.html`. |
 | Documentación de reportes | Pablo Samuel Leon Hernandez / Diego Nicolas Moreno Alvarez | docs/reportes | Redacción de indicadores, filtros y consultas consolidada de reportes en `docs/entrega3/reportes.md`. |
 | Integración de ramas | Todo el equipo | main | Fusión de todas las ramas de funcionalidades y documentación hacia `main` y verificación general del sistema ejecutable. |
 | Actualización final del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Cierre consolidado de actividades, responsables y entregables finales de la Entrega 3. |
