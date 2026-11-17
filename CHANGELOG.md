@@ -247,3 +247,90 @@ Finalmente, se integrarán las ramas pendientes en main y se actualizará el CHA
 
 Por completar según las dificultades identificadas durante la validación de las consultas avanzadas, la asignación de privilegios, la ejecución de los casos de prueba y la integración de las ramas pendientes.
 
+
+## Semana 9 (Entrega 3 - Semana 1)
+
+### Objetivos de la semana
+
+Implementar la programación almacenada en Oracle mediante funciones, procedimientos almacenados y los 4 triggers obligatorios del sistema. Documentar el propósito y comportamiento de cada objeto PL/SQL, registrar las pruebas de disparo de los triggers y actualizar el CHANGELOG.md.
+
+### Tareas realizadas
+| Tarea | Responsable(s) | Rama utilizada | Descripción |
+|------|------|------|------|
+| Funciones PL/SQL | Juan Sebastian Quintero | features/funciones | Implementación de `fn_diferencia_gol_seleccion`, `fn_validar_cupo_convocatoria` y `fn_verificar_dorsal_disponible` en `sql/entrega3/funciones/funciones.sql`. |
+| Procedimientos almacenados | Juan Sebastian Quintero / Andrés Peña | features/procedimientos | Creación de `cargar_resultados_masivos`, `actualizar_posiciones_grupo` y `cerrar_fase` en `sql/entrega3/procedimientos/procedimientos.sql`. |
+| Triggers obligatorios | Juan Sebastian Quintero | features/triggers | Implementación de los triggers de auditoría, validación de rangos, anti-duplicidad y consistencia en `sql/entrega3/triggers/triggers.sql`. |
+| Documentación de programación BD | Pablo Samuel Leon Hernandez / Diego Nicolas Moreno Alvarez | docs/programacion-bd | Redacción de propósito, parámetros y comportamiento esperado de funciones, procedimientos y triggers en `docs/entrega3/documentacion_programacion_bd.md`. |
+| Pruebas de triggers | Andrés Peña | tests/pruebas-triggers | Ejecución y registro de evidencia de disparo de los triggers en `tests/entrega3/pruebas_triggers.md`. |
+| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Registro de tareas, ramas y cambios realizados en la primera semana de la Entrega 3. |
+
+### Cambios principales
+
+- Creación de `sql/entrega3/funciones/funciones.sql` con las 3 funciones de cálculo de diferencia de gol, validación de cupo y disponibilidad de dorsal.
+- Implementación de `sql/entrega3/procedimientos/procedimientos.sql` para carga masiva de resultados, actualización de tabla de posiciones y cierre de fase.
+- Desarrollo de `sql/entrega3/triggers/triggers.sql` con auditoría en `auditoria_bd`, validación de valores negativos, control anti-duplicidad y consistencia de goles.
+- Documentación técnica completa de objetos PL/SQL en `docs/entrega3/documentacion_programacion_bd.md`.
+- Registro de evidencias de validación de triggers en `tests/entrega3/pruebas_triggers.md`.
+
+### Problemas encontrados
+
+- Ajustes en los triggers compuestos (`FOR INSERT/UPDATE`) para evitar errores de tabla mutante al validar duplicidad de selecciones y suma de goles individuales.
+- Sincronización de tipos de datos (`SYS.ODCINUMBERLIST`) en los procedimientos de carga masiva.
+
+---
+
+## Semana 10 (Entrega 3 - Semana 2)
+
+### Objetivos de la semana
+
+Construir la estructura base de la aplicación web en Spring Boot conectada a la base de datos Oracle del laboratorio, implementar la administración y consulta de catálogos del Mundial, documentar la arquitectura del sistema y actualizar el CHANGELOG.md.
+
+### Tareas realizadas
+| Tarea | Responsable(s) | Rama utilizada | Descripción |
+|------|------|------|------|
+| Estructura base y conexión BD | Juan Sebastian Quintero | features/app-base | Configuración del proyecto Spring Boot, dependencias Maven, entidades JPA y conexión JDBC a Oracle en `app/`. |
+| Controladores y vistas de catálogos | Juan Sebastian Quintero / Andrés Peña | features/catalogos-web | Implementación de `CatalogoController`, repositorios JPA y plantillas HTML en Thymeleaf para ediciones, sedes, ciudades, estadios, grupos, selecciones, jugadores, convocatorias y partidos. |
+| Documentación de arquitectura | Diego Nicolas Moreno Alvarez / Pablo Samuel Leon Hernandez | docs/arquitectura-app | Descripción del stack tecnológico, capas del backend, flujo de comunicación y consultas clave en `docs/entrega3/arquitectura_aplicacion.md`. |
+| Guía de ejecución local | Diego Nicolas Moreno Alvarez | docs/app-readme | Redacción de instrucciones de configuración y arranque local de la aplicación en `app/README.md`. |
+| Actualización del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Registro de los avances de arquitectura y desarrollo inicial de la aplicación web. |
+
+### Cambios principales
+
+- Inicialización del proyecto web en `app/` con Java 17, Spring Boot, Spring Data JPA y Thymeleaf.
+- Mapeo completo de las entidades JPA y creación de los repositorios base conectados a Oracle.
+- Implementación de las rutas y vistas de consulta para los 9 catálogos principales del torneo bajo una plantilla unificada (`layout.html`).
+- Documentación de la arquitectura en tres capas y conexión JDBC en `docs/entrega3/arquitectura_aplicacion.md`.
+- Creación de `app/README.md` con los pasos de despliegue local.
+
+### Problemas encontrados
+
+- Ajustes en `application.properties` (`spring.jpa.hibernate.ddl-auto=none`) para respetar el esquema relacional previamente creado en Oracle sin alterarlo.
+- Estandarización de plantillas HTML con Thymeleaf y Bootstrap para mantener uniformidad visual entre catálogos.
+
+---
+
+## Semana 11 (Entrega 3 - Semana 3)
+
+### Objetivos de la semana
+
+Completar la aplicación web con el módulo de reportes estadísticos, integración directa con funciones y triggers PL/SQL, documentación de reportes, fusión de todas las ramas pendientes en main y cierre final de la Entrega 3 en el CHANGELOG.md.
+
+### Tareas realizadas
+| Tarea | Responsable(s) | Rama utilizada | Descripción |
+|------|------|------|------|
+| Módulo de reportes y conexión PL/SQL | Juan Sebastian Quintero | features/reportes-plsql | Implementación de `ReporteController`, `ReporteRepository` y `PlSqlFunctionRepository` para tabla de posiciones, ranking de goleadores, auditoría y pruebas normativas en vivo. |
+| Vistas de reportes y panel de control | Juan Sebastian Quintero / Andrés Peña | features/vistas-reportes | Desarrollo de las interfaces `tabla_posiciones.html`, `goleadores.html`, `incidencias.html` y `prueba_plsql.html`. |
+| Documentación de reportes | Pablo Samuel Leon Hernandez / Diego Nicolas Moreno Alvarez | docs/reportes | Redacción de indicadores, filtros y consultas consolidada de reportes en `docs/entrega3/reportes.md`. |
+| Integración de ramas | Todo el equipo | main | Fusión de todas las ramas de funcionalidades y documentación hacia `main` y verificación general del sistema ejecutable. |
+| Actualización final del CHANGELOG | Diego Nicolas Moreno Alvarez | main | Cierre consolidado de actividades, responsables y entregables finales de la Entrega 3. |
+
+### Cambios principales
+
+- Implementación de `ReporteRepository` con consultas nativas para tabla de posiciones (integrando `fn_diferencia_gol_seleccion`), ranking de goleadores y registro de auditoría (`auditoria_bd`).
+- Creación de `PlSqlFunctionRepository` y la vista `prueba_plsql.html` para validar cupos de convocatoria y disponibilidad de dorsales desde la interfaz web.
+- Documentación funcional de los indicadores y reportes en `docs/entrega3/reportes.md`.
+- Fusión completa de ramas en `main` dejando la base de datos y la aplicación web totalmente ejecutables.
+
+### Problemas encontrados
+
+- Resolución de conflictos menores en archivos de configuración y plantillas durante el merge final hacia `main`.
