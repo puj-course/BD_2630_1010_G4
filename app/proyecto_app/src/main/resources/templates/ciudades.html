@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head><title>Ciudades Sede - FIFA World Cup</title></head>
+<body>
+<section>
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h2 class="fw-bold text-dark"><i class="fa-solid fa-city text-info me-2"></i> Ciudades Sede Oficiales</h2>
+            <p class="text-muted">Ciudades anfitrionas vinculadas a cada país organizador.</p>
+        </div>
+        <div class="col-auto">
+            <a href="/estadios" class="btn btn-outline-success btn-sm me-2"><i class="fa-solid fa-building-columns me-1"></i> Ver Estadios</a>
+            <a href="/" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-house me-1"></i> Inicio</a>
+        </div>
+    </div>
+
+    <div class="card p-3 bg-white shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover text-center align-middle mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID Ciudad</th>
+                        <th class="text-start ps-3">Nombre de la Ciudad</th>
+                        <th>Sede Anfitriona (Ref)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${ciudades == null || ciudades.empty}">
+                        <td colspan="3" class="text-muted py-4">No hay ciudades registradas en el sistema.</td>
+                    </tr>
+                    <tr th:each="c : ${ciudades}">
+                        <td th:text="${c.idCiudad}">1</td>
+                        <td class="fw-bold text-start ps-3" th:text="${c.nombre}">Ciudad</td>
+                        <td><span class="badge bg-secondary px-3" th:text="'Sede #' + ${c.idSede}">1</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>

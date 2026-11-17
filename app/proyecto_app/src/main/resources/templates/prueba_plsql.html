@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head><title>Control Normativo - FIFA 2026</title></head>
+<body>
+<section>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <a href="/" class="btn btn-outline-secondary btn-sm me-2"><i class="fa-solid fa-house me-1"></i> Inicio</a>
+            <a href="/reportes/posiciones" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-ranking-star me-1"></i> Ver Posiciones</a>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="fw-bold text-dark"><i class="fa-solid fa-clipboard-check text-primary me-2"></i> Módulo de Control Normativo y Convocatorias</h2>
+        <p class="text-muted">Herramienta oficial para la verificación de cupos, disponibilidad de dorsales y cumplimiento del reglamento de selecciones.</p>
+    </div>
+
+    <div th:if="${error}" class="alert alert-danger shadow-sm" th:text="${error}"></div>
+
+    <div class="card p-4 bg-white mb-4 shadow-sm">
+        <form method="get" action="/pruebas/ejecutar">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label fw-bold small text-muted">ID Selección</label>
+                    <input type="number" name="idSeleccion" class="form-control" placeholder="Ej. 1" th:value="${param.idSeleccion}">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-bold small text-muted">Número de Dorsal</label>
+                    <input type="number" name="dorsal" class="form-control" placeholder="Ej. 10" th:value="${param.dorsal}">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-bold small text-muted">ID Jugador (Opcional)</label>
+                    <input type="number" name="idJugador" class="form-control" placeholder="Ej. 5" th:value="${param.idJugador}">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-bold small text-muted">Límite Convocatoria</label>
+                    <input type="number" name="limiteMaximo" class="form-control" value="26" th:value="${param.limiteMaximo != null ? param.limiteMaximo : 26}">
+                </div>
+            </div>
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary px-4"><i class="fa-solid fa-magnifying-glass me-1"></i> Verificar Normativa</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="card p-4 bg-white shadow-sm" th:if="${resultadoCupo != null or resultadoDorsal != null}">
+        <h4 class="text-success mb-3"><i class="fa-solid fa-circle-check me-2"></i> Resultados de la Verificación Oficial:</h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item py-3" th:if="${resultadoCupo != null}">
+                <i class="fa-solid fa-users text-primary me-2"></i> <span th:text="${resultadoCupo}" class="fw-semibold"></span>
+            </li>
+            <li class="list-group-item py-3" th:if="${resultadoDorsal != null}">
+                <i class="fa-solid fa-shirt text-primary me-2"></i> <span th:text="${resultadoDorsal}" class="fw-semibold"></span>
+            </li>
+        </ul>
+    </div>
+</section>
+</body>
+</html>

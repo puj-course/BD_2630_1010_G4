@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head><title>Tabla de Posiciones - FIFA 2026</title></head>
+<body>
+<section>
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h2 class="fw-bold text-dark"><i class="fa-solid fa-ranking-star text-primary me-2"></i> Tabla de Posiciones y Rendimiento</h2>
+            <p class="text-muted">Estadísticas oficiales actualizadas del torneo y rendimiento por grupos.</p>
+        </div>
+        <div class="col-auto">
+            <a href="/" class="btn btn-outline-secondary btn-sm me-2"><i class="fa-solid fa-house me-1"></i> Inicio</a>
+            <a href="/pruebas/plsql" class="btn btn-primary btn-sm shadow-sm"><i class="fa-solid fa-clipboard-check me-1"></i> Control Normativo</a>
+        </div>
+    </div>
+
+    <div th:if="${error}" class="alert alert-danger shadow-sm" th:text="${error}"></div>
+
+    <div class="card p-3 bg-white">
+        <div class="table-responsive">
+            <table class="table table-hover text-center align-middle mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Grupo</th>
+                        <th class="text-start ps-3">Selección</th>
+                        <th>PJ</th><th>PG</th><th>PE</th><th>PP</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${tablaPosiciones == null || tablaPosiciones.empty}">
+                        <td colspan="8" class="text-muted py-4">No hay datos de partidos registrados en el sistema.</td>
+                    </tr>
+                    <tr th:each="row : ${tablaPosiciones}">
+                        <td><span class="badge bg-secondary" th:text="${row[2]}">Grupo</span></td>
+                        <td class="fw-bold text-start ps-3" th:text="${row[1]}">País</td>
+                        <td th:text="${row[3]}">PJ</td>
+                        <td class="text-success fw-semibold" th:text="${row[4]}">PG</td>
+                        <td class="text-warning fw-semibold" th:text="${row[5]}">PE</td>
+                        <td class="text-danger fw-semibold" th:text="${row[6]}">PP</td>
+                        <td class="fw-bold text-info" th:text="${row[7]}">DG</td>
+                        <td><span class="badge bg-success fs-6 px-3 py-1" th:text="${row[8]}">Pts</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>

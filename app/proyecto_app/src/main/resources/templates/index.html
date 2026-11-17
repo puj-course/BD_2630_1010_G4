@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head>
+    <title>Inicio - Portal FIFA World Cup</title>
+</head>
+<body>
+<section>
+    <!-- Banner de Bienvenida Institucional -->
+    <div class="p-5 mb-5 bg-white rounded-4 shadow-sm border-0 text-center text-md-start">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="display-5 fw-bold text-dark"><i class="fa-solid fa-trophy text-warning me-2"></i> Gestión Mundial FIFA</h1>
+                <p class="lead text-muted mt-3">
+                    Bienvenido al sistema central de administración y seguimiento de las Copas Mundiales. Consulte resultados por edición, tablas de posiciones oficiales y gestione la normativa de selecciones y convocatorias.
+                </p>
+                <div class="mt-4">
+                    <a href="/reportes/posiciones" class="btn btn-primary btn-lg px-4 me-2 shadow-sm">
+                        <i class="fa-solid fa-ranking-star me-1"></i> Ver Posiciones
+                    </a>
+                    <a href="/pruebas/plsql" class="btn btn-outline-dark btn-lg px-4 shadow-sm">
+                        <i class="fa-solid fa-clipboard-check me-1"></i> Control Normativo
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center d-none d-md-block">
+                <i class="fa-solid fa-futbol text-primary display-1 shadow-sm p-4 rounded-circle bg-light"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secciones Principales -->
+    <h3 class="fw-bold text-dark mb-4"><i class="fa-solid fa-compass me-2 text-primary"></i> Módulos Principales</h3>
+    
+    <div class="row g-4">
+        <!-- Tarjeta 1: Posiciones -->
+        <div class="col-md-6">
+            <div class="card h-100 p-4 bg-white shadow-sm border-0">
+                <div class="card-body">
+                    <div class="text-success mb-3 fs-3"><i class="fa-solid fa-table-list"></i></div>
+                    <h4 class="card-title fw-bold text-dark">Tabla de Posiciones</h4>
+                    <p class="card-text text-muted mt-2">
+                        Monitoree el rendimiento de cada selección por grupos, visualice los partidos jugados, encuentros ganados, empatados, puntos acumulados y la diferencia de goles oficial de los torneos.
+                    </p>
+                    <a href="/reportes/posiciones" class="btn btn-outline-success mt-3">
+                        Consultar Posiciones <i class="fa-solid fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2: Control Normativo -->
+        <div class="col-md-6">
+            <div class="card h-100 p-4 bg-white shadow-sm border-0">
+                <div class="card-body">
+                    <div class="text-primary mb-3 fs-3"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <h4 class="card-title fw-bold text-dark">Control Normativo y Convocatorias</h4>
+                    <p class="card-text text-muted mt-2">
+                        Herramienta de verificación administrativa para validar la disponibilidad de dorsales y controlar los límites oficiales de jugadores convocados por selección.
+                    </p>
+                    <a href="/pruebas/plsql" class="btn btn-outline-primary mt-3">
+                        Ir al Módulo de Control <i class="fa-solid fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

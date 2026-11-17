@@ -25,7 +25,6 @@ public class EdicionMundial {
 
     public EdicionMundial() {}
 
-    // Getters y Setters
     public Long getIdEdicion() { return idEdicion; }
     public void setIdEdicion(Long idEdicion) { this.idEdicion = idEdicion; }
     public Integer getAnio() { return anio; }

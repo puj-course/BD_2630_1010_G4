@@ -1,33 +1,48 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Partidos - Mundial</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
-</head>
-<body class="container mt-5">
-    <h2 class="mb-4">Registro de Partidos</h2>
-    <table class="table table-striped table-bordered">
-        <thead class="table-dark">
-            <tr>
-                <th>ID Partido</th>
-                <th>Fecha y Hora</th>
-                <th>Asistencia</th>
-                <th>ID Estadio</th>
-                <th>ID Fase</th>
-                <th>ID Edición</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="p : ${partidos}">
-                <td th:text="${p.idPartido}">1</td>
-                <td th:text="${p.fechaHora}">2026-06-11 15:00</td>
-                <td th:text="${p.asistenciaRegistrada}">60000</td>
-                <td th:text="${p.idEstadio}">1</td>
-                <td th:text="${p.idFase}">1</td>
-                <td th:text="${p.idEdicion}">1</td>
-            </tr>
-        </tbody>
-    </table>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head><title>Calendario de Partidos - FIFA 2026</title></head>
+<body>
+<section>
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h2 class="fw-bold text-dark"><i class="fa-solid fa-futbol text-success me-2"></i> Calendario y Registro de Encuentros</h2>
+            <p class="text-muted">Programación oficial de partidos, sedes asignadas y control de asistencia en estadios.</p>
+        </div>
+        <div class="col-auto">
+            <a href="/reportes/posiciones" class="btn btn-outline-primary btn-sm me-2"><i class="fa-solid fa-ranking-star me-1"></i> Posiciones</a>
+            <a href="/" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-house me-1"></i> Inicio</a>
+        </div>
+    </div>
+
+    <div class="card p-3 bg-white shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover text-center align-middle mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID Encuentro</th>
+                        <th>Fecha y Hora Oficial</th>
+                        <th>Asistencia Registrada</th>
+                        <th>Estadio (Ref)</th>
+                        <th>Fase (Ref)</th>
+                        <th>Edición (Ref)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${partidos == null || partidos.empty}">
+                        <td colspan="6" class="text-muted py-4">No hay partidos programados o registrados todavía.</td>
+                    </tr>
+                    <tr th:each="p : ${partidos}">
+                        <td class="fw-bold" th:text="'#' + ${p.idPartido}">#1</td>
+                        <td th:text="${p.fechaHora}">2026-06-11 15:00</td>
+                        <td><span class="badge bg-success bg-opacity-75 fs-6 px-3" th:text="${p.asistenciaRegistrada != null ? p.asistenciaRegistrada + ' esp.' : 'Pendiente'}">60000</span></td>
+                        <td th:text="${p.idEstadio}">1</td>
+                        <td th:text="${p.idFase}">1</td>
+                        <td th:text="${p.idEdicion}">1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 </body>
 </html>

@@ -21,7 +21,6 @@ public class Federacion {
 
     public Federacion() {}
 
-    // Getters y Setters
     public Long getIdFederacion() { return idFederacion; }
     public void setIdFederacion(Long idFederacion) { this.idFederacion = idFederacion; }
     public String getNombre() { return nombre; }

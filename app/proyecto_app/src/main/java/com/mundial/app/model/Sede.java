@@ -18,7 +18,6 @@ public class Sede {
 
     public Sede() {}
 
-    // Getters y Setters
     public Long getIdSede() { return idSede; }
     public void setIdSede(Long idSede) { this.idSede = idSede; }
     public Long getIdEdicion() { return idEdicion; }

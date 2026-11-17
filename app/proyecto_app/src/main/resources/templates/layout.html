@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal de Administración - FIFA World Cup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background-color: #f4f6f9; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar { background: linear-gradient(135deg, #0a2342, #1c3b57); }
+        .card { border: none; border-radius: 12px; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); }
+        .table-hover tbody tr:hover { background-color: rgba(10, 35, 66, 0.03); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/"><i class="fa-solid fa-globe text-warning me-2"></i> FIFA World Cup Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/"><i class="fa-solid fa-house me-1"></i> Inicio</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-folder-open me-1"></i> Catálogos
+                        </a>
+                        <ul class="dropdown-menu shadow border-0">
+                            <li><h6 class="dropdown-header">Torneo e Infraestructura</h6></li>
+                            <li><a class="dropdown-item" href="/ediciones"><i class="fa-solid fa-calendar-days me-2 text-primary"></i> Ediciones</a></li>
+                            <li><a class="dropdown-item" href="/sedes"><i class="fa-solid fa-earth-americas me-2 text-primary"></i> Sedes</a></li>
+                            <li><a class="dropdown-item" href="/ciudades"><i class="fa-solid fa-city me-2 text-info"></i> Ciudades</a></li>
+                            <li><a class="dropdown-item" href="/estadios"><i class="fa-solid fa-building-columns me-2 text-success"></i> Estadios</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header">Delegaciones y Plantillas</h6></li>
+                            <li><a class="dropdown-item" href="/grupos"><i class="fa-solid fa-layer-group me-2 text-warning"></i> Grupos</a></li>
+                            <li><a class="dropdown-item" href="/selecciones"><i class="fa-solid fa-flag me-2 text-warning"></i> Selecciones</a></li>
+                            <li><a class="dropdown-item" href="/jugadores"><i class="fa-solid fa-users me-2 text-info"></i> Jugadores</a></li>
+                            <li><a class="dropdown-item" href="/convocatorias"><i class="fa-solid fa-id-card-clip me-2 text-primary"></i> Convocatorias</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/partidos"><i class="fa-solid fa-futbol me-2 text-dark"></i> Partidos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="/reportes/posiciones"><i class="fa-solid fa-ranking-star me-1"></i> Posiciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/reportes/goleadores"><i class="fa-solid fa-shoe-prints me-1"></i> Goleadores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/reportes/incidencias"><i class="fa-solid fa-shield-halved me-1"></i> Registro de Actividad</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pruebas/plsql"><i class="fa-solid fa-clipboard-check me-1"></i> Control Normativo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-3">
+        <div th:replace="${content}"></div>
+    </main>
+
+    <footer class="text-center text-muted py-4 mt-5 border-top">
+        <small>© Fédération Internationale de Football Association. Sistema Central de Gestión de Torneos.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

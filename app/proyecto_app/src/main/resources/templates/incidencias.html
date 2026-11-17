@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head><title>Registro de Actividad - FIFA 2026</title></head>
+<body>
+<section>
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h2 class="fw-bold text-dark"><i class="fa-solid fa-shield-halved text-danger me-2"></i> Registro Oficial de Actividad y Trazabilidad</h2>
+            <p class="text-muted">Monitoreo transparente de operaciones y control de eventos oficiales del torneo.</p>
+        </div>
+        <div class="col-auto">
+            <a href="/" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-house me-1"></i> Inicio</a>
+        </div>
+    </div>
+
+    <div th:if="${error}" class="alert alert-danger shadow-sm" th:text="${error}"></div>
+
+    <div class="card p-3 bg-white shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover text-center align-middle mb-0 small">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Módulo del Sistema</th>
+                        <th>Tipo de Acción</th>
+                        <th>ID de Referencia</th>
+                        <th>Usuario Responsable</th>
+                        <th>Fecha y Hora</th>
+                        <th class="text-start ps-3">Descripción del Evento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${incidencias == null || incidencias.empty}">
+                        <td colspan="7" class="text-muted py-4">No hay registros de actividad en este momento.</td>
+                    </tr>
+                    <tr th:each="row : ${incidencias}">
+                        <td th:text="${row[0]}">ID</td>
+                        <td><span class="badge bg-secondary" th:text="${row[1]}">Módulo</span></td>
+                        <td>
+                            <span class="badge" 
+                                  th:classappend="${row[2] == 'INSERT' ? 'bg-success' : (row[2] == 'UPDATE' ? 'bg-warning text-dark' : 'bg-danger')}" 
+                                  th:text="${row[2]}">Acción</span>
+                        </td>
+                        <td th:text="${row[3]}">Ref</td>
+                        <td th:text="${row[4]}">Responsable</td>
+                        <td th:text="${row[5]}">Fecha</td>
+                        <td class="text-start ps-3" th:text="${row[6]}">Detalle</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>

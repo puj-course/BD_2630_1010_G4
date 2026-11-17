@@ -36,7 +36,6 @@ public class EstadisticaJugadorPartido {
 
     public EstadisticaJugadorPartido() {}
 
-    // Getters y Setters
     public Long getIdEstadistica() { return idEstadistica; }
     public void setIdEstadistica(Long idEstadistica) { this.idEstadistica = idEstadistica; }
     public Long getIdPartido() { return idPartido; }

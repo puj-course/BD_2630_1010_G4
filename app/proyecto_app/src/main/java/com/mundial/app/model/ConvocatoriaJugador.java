@@ -24,7 +24,6 @@ public class ConvocatoriaJugador {
 
     public ConvocatoriaJugador() {}
 
-    // Getters y Setters
     public Long getIdConvocatoria() { return idConvocatoria; }
     public void setIdConvocatoria(Long idConvocatoria) { this.idConvocatoria = idConvocatoria; }
     public Long getIdJugador() { return idJugador; }

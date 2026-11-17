@@ -18,7 +18,7 @@ public class Grupo {
 
     public Grupo() {}
 
-    // Getters y Setters
+    
     public Long getIdGrupo() { return idGrupo; }
     public void setIdGrupo(Long idGrupo) { this.idGrupo = idGrupo; }
     public Long getIdEdicion() { return idEdicion; }

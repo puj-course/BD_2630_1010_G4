@@ -1,31 +1,46 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Selecciones</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
-</head>
-<body class="container mt-5">
-    <h2 class="mb-4">Catálogo de Selecciones</h2>
-    <table class="table table-striped table-bordered">
-        <thead class="table-dark">
-            <tr>
-                <th>ID Selección</th>
-                <th>País</th>
-                <th>ID Edición</th>
-                <th>ID Federación</th>
-                <th>ID Grupo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="sel : ${selecciones}">
-                <td th:text="${sel.idSeleccion}">1</td>
-                <td th:text="${sel.pais}">Colombia</td>
-                <td th:text="${sel.idEdicion}">1</td>
-                <td th:text="${sel.idFederacion}">1</td>
-                <td th:text="${sel.idGrupo}">1</td>
-            </tr>
-        </tbody>
-    </table>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head><title>Selecciones Participantes - FIFA 2026</title></head>
+<body>
+<section>
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h2 class="fw-bold text-dark"><i class="fa-solid fa-flag text-warning me-2"></i> Selecciones Nacionales</h2>
+            <p class="text-muted">Delegaciones clasificadas, confederaciones y distribución por grupos.</p>
+        </div>
+        <div class="col-auto">
+            <a href="/reportes/posiciones" class="btn btn-outline-primary btn-sm me-2"><i class="fa-solid fa-ranking-star me-1"></i> Ver Posiciones</a>
+            <a href="/" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-house me-1"></i> Inicio</a>
+        </div>
+    </div>
+
+    <div class="card p-3 bg-white shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover text-center align-middle mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th class="text-start ps-3">País / Selección</th>
+                        <th>Edición (Ref)</th>
+                        <th>Confederación (Ref)</th>
+                        <th>Grupo Asignado (Ref)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${selecciones == null || selecciones.empty}">
+                        <td colspan="5" class="text-muted py-4">No hay selecciones registradas en el sistema.</td>
+                    </tr>
+                    <tr th:each="sel : ${selecciones}">
+                        <td th:text="${sel.idSeleccion}">1</td>
+                        <td class="fw-bold text-start ps-3" th:text="${sel.pais}">Colombia</td>
+                        <td th:text="${sel.idEdicion}">1</td>
+                        <td th:text="${sel.idFederacion}">1</td>
+                        <td><span class="badge bg-secondary px-3" th:text="'Grupo #' + ${sel.idGrupo}">1</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 </body>
 </html>

@@ -21,7 +21,7 @@ public class Fase {
 
     public Fase() {}
 
-    // Getters y Setters
+    //Métodos
     public Long getIdFase() { return idFase; }
     public void setIdFase(Long idFase) { this.idFase = idFase; }
     public Long getIdEdicion() { return idEdicion; }
